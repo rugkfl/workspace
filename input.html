@@ -39,10 +39,14 @@
      <!-- post : https:// 뒤에 넘기는 데이터들이 다 표시되지 않음 -->
     <form action="receive.html" method="post">
         <!-- form 태그 안에 있는 것들에만 영향을 미침 -->
-        <input type="text" name="id">
-        <input type="password" name="pwd">
-        <input type="text" name="name">
-        <input type="submit" value="저장" name>
+        <input type="text" name="id" placeholder="아이디"><br>
+        <input type="password" name="pwd" placeholder="비밀번호"><br>
+        <input type="text" name="name" placeholder="이름"><br>
+        <input type="number" name="age" placeholder="나이"><br>
+        <input type="email" name="email" placeholder="이메일"><br>
+        <!-- <input type="tel" name="tel" placeholder="전화번호"><br> -->
+        <input type="hidden" value="test">
+        <input type="submit" value="저장" >
         <input type="reset" value="초기화">
     </form>
 </body>
