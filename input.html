@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" /><br> <!--한줄 데이터 입력-->
+    <input type="password" /><br> <!--한줄 데이터 입력 / hide 처리-->
+    <input type="radio" /><br>
+    <input type="checkbox" /><br>
+    <input type="button" value="click" /><br>
+    <input type="submit" /><br>
+    <input type="reset" /><br>
+    <input type="file" /><br>
+    <input type="date" />
+
+    <hr>
+
+    <h1>Radio Test</h1>
+    <!-- 같은 name을 부여해주면 둘 중 하나만 선택된다 -->
+    남자 <input type="radio" name="gender">
+    여자 <input type="radio" name="gender">
+
+    <hr>
+
+    <!-- 같은 name을 부여해주면 전부 다 선택 가능 -->
+    <h1>Checkbox Test</h1>
+    야구 <input type="checkbox" name="sports">
+    축구 <input type="checkbox" name="sports">
+    농구 <input type="checkbox" name="sports">
+
+    <hr>
+
+    <h1>Submit Test</h1>
+    <!-- post / get -->
+     <!-- get : https:// 뒤에 넘기는 데이터들이 다 표시됨 -->
+     <!-- post : https:// 뒤에 넘기는 데이터들이 다 표시되지 않음 -->
+    <form action="receive.html" method="post">
+        <!-- form 태그 안에 있는 것들에만 영향을 미침 -->
+        <input type="text" name="id">
+        <input type="password" name="pwd">
+        <input type="text" name="name">
+        <input type="submit" value="저장" name>
+        <input type="reset" value="초기화">
+    </form>
+</body>
+</html>
