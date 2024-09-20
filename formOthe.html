@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="receive.html">
+        <!-- 읽기 전용 => 데이터가 넘어감 -->
+        <input type="text" name="name" value="hong" readonly><br>
+        <!-- disabled 비활성화 : 데이터가 안넘어감-->
+        <input type="text" name="addr" value="seoul" disabled>
+        <!-- <input type="number" name="age" maxlength="2"><br> => number는 maxlength 안먹힘-->
+        <input type="text" name="age" maxlength="2"><br>
+        한국 <input type="checkbox" name="nation" value="korea" checked><br>
+        미국 <input type="checkbox" name="nation" value="usa"><br>
+        영국 <input type="checkbox" name="nation" value="uk"><br>
+        <input type="submit" value="확인">  
+    </form>
+</body>
+</html>
