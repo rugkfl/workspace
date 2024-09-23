@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample</title>
+    <style>
+        * {
+            color: red;
+        }
+
+        th {
+            color: blue;
+        }
+
+        #memberId {
+            background-color: yellow;
+        }
+
+        .header {
+            background-color: darkgray;
+        }
+
+        a[href] { /** 속성까지 추가해서 디테일하게 작업하기 **/
+            color: green;
+        }
+
+        input[type="password"] {
+            /* display: none; */
+            background-color: brown;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="header">First CSS</h1>
+    <h1>Second CSS</h1>
+    <h1 class="header">One CSS</h1>
+    <h1>Two CSS</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <td><input type="text" id="memberId"></td>
+        </tr>
+        <tr>
+            <th>PWD</th>
+            <td><input type="password" name="PWD"></td>
+        </tr>
+        <tr>
+            <th colspan="2">
+                <a href="#">로그인</a>
+                <a>초기화</a>
+            </th>
+        </tr>
+    </table>
+</body>
+</html>
