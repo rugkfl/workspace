@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        div {
+            width: 100px;
+            height: 100px;
+        }
+
+        #top {
+            width: 400px;
+            background-color: gray;
+            padding: 20px;
+        }
+
+        #top::after {
+            display: block;
+            content: "";
+            clear: both;
+        }
+
+        .red {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            float: left;
+        }
+
+        .blue {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            float: left;
+        }
+
+        .green {
+            background-color: green;
+            /* clear: left; */
+        }
+    </style>
+</head>
+<body>
+    <div id="top">
+        <div class="red"></div>
+        <div class="blue"></div>
+        <div class="green"></div>
+    </div>
+    </body>
+</html>
