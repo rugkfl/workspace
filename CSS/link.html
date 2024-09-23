@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a:link { /* 링크를 방문하지 않았을 때 */
+            color: orange;
+            /* text-decoration: none; */
+        }
+        
+        a:visited { /* 링크를 방문했을 때 */
+            color: green;
+            /* text-decoration: none; */
+        }
+
+        .hv:hover {
+            color: chocolate;
+        }
+
+        button:active {
+            color: red;
+        }
+
+        #focusTest:focus {
+            background-color: yellow;
+        }
+
+        #chkTest:checked + label{
+            color: magenta;
+        }
+        
+        input:disabled, button:disabled {
+            background-color: tomato;
+        }
+
+        .enabledButton:enabled {
+            background-color: magenta;
+        }
+    </style>
+</head>
+<body>
+    <p class="hv">hover</p>
+    <button>active</button><br>
+    <input id="focusTest" type="text"><br>
+    <input id="chkTest" type="checkbox">
+    <label for="chkTest">체크박스</label><br>
+    <input type="text" disabled>
+    <button disabled>버튼</button>
+    <button class="enabledButton">이것도 버튼</button>
+    <hr>
+    <a href="https://www.google.co.kr">구글</a><br>
+    <a href="https://www.lgcns.co.kr">LG CNS</a><br>
+    <a href="https://www.korea.com">대한민국</a>
+</body>
+</html>

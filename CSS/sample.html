@@ -29,6 +29,22 @@
             /* display: none; */
             background-color: brown;
         }
+
+        a[href ^= "www"] { /** "www"가 시작하는 href 속성을 선택 **/
+            color: darkorange;
+        }
+
+        a[href $="net"] { /** net으로 끝나는지 **/
+            color: darkred;
+        }
+
+        a[href *= "google"] { /** google이 포함되어 있는지 **/
+            color: olive;
+        }
+
+        p, div, span .header{
+            color: lightblue;
+        }
     </style>
 </head>
 <body>
@@ -52,5 +68,19 @@
             </th>
         </tr>
     </table>
+    <hr>
+    <a href="www.naver.com">naver</a><br>
+    <a href="www.google.com">google</a><br>
+    <a href="daum.net">daum</a>
+
+    <p>
+        첫번 째 단락입니다.
+    </p>
+
+    <div>
+        첫번 째 div 입니다.
+    </div>
+
+    이 문장의 <span>일부분에 적용합니다.</span>
 </body>
 </html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 900;
+            font-size: 30px;
+            font-variant: small-caps; /* 영문 소문자를 작은 대문자로 변경*/
+        }
+
+        p:first-child { /* p중에 첫번 째 child 인거*/
+            background-color: yellow;
+        }
+
+        /* p:last-child { p중에 마지막 child 인거 */
+            /* color: red; */
+        /* } */
+        
+        /* p:last-of-type { p중에 마지막 child 인거 */
+            /* color: red; */
+        /* } */
+        /* p:nth-child(3) { p 자식들 중에 위에서부터 3번 째에 있는 거 */
+            /* background-color: green; */
+        /* } */
+
+        p:nth-last-child(1) { /**뒤에서부터 3번 째에 있는 거 **/
+             background-color: gray; 
+        }
+        
+        /* p:nth-of-type(2) {
+            color: magenta;
+        } */
+
+        p:nth-last-of-type(2) { /** 뒤에서부터 3번 째에 있는 거 **/
+             background-color: red;
+        }
+
+        p:first-of-type {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <p>one</p>
+    <div>
+        <p>two</p>
+        <span>three</span>
+        <p>four</p>
+    </div>
+    <div>
+        <p>five</p>
+        <span>six-1</span>
+        <span>six-2</span>
+        <p>seven</p>
+    </div>
+    <p>eight</p>
+</body>
+</html>

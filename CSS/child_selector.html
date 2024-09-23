@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* >는 바로 밑에 있는 자식 태그를 의미 */
+        div > p { /** div안에 들어있는 p태그 **/
+            color: red
+        }
+
+        .sup > p { /** 속성이 sup인 태그 안에 있는 p태그 **/
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="sup">
+        <p>one</p>
+        <div>
+            <p>two</p>
+        </div>
+        <p>three</p>
+    </div>
+
+    <p>four</p>
+</body>
+</html>

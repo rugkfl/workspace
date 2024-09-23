@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 + h2 { /* h1기준으로 제일 가까운 h2를 찾아라 / 위에서 밑으로만 찾아 내려감*/
+            color: red;
+        }
+
+        h5 + h2 {
+            color: blue;
+        }
+
+        h1 ~ h2 { /* h1기준으로 h2에 해당되는 모든 태그를 찾아라 / 위에서 밑으로만 찾아 내려감 */
+            color: yellow;
+        }
+
+        h4 ~ h2 { /* h4기준으로 하위 h2에 해당되는 모든 태그*/
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>one</h1>
+    <h2>two</h2>
+    <h2>three</h2>
+    <h4>four</h4>
+    <h5>five</h5>
+    <h2>six</h2>
+</body>
+</html>
