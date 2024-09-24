@@ -9,7 +9,22 @@
        코드 구현
      
      */
-	
+    let inputNumOne = prompt("1.정수값을 입력하시오.");
+    let inputNumTwo = prompt("2.정수값을 입력하시오.");
+    let inputNumThree = prompt("3.정수값을 입력하시오.");
+
+    let numOne = Number(inputNumOne);
+    let numTwo = Number(inputNumTwo);
+    let numThree = Number(inputNumThree);
+
+    console.log(`첫번째 입력값은 ${numOne}`);
+    console.log(`두번째 입력값은 ${numTwo}`);
+    console.log(`세번째 입력값은 ${numThree}`);
+
+    let numList = [numOne, numTwo, numThree];
+    let maxNum = Math.max.apply(null, numList);
+
+    console.log(`가장 큰 값: ${maxNum}`);
     
 </script>
 </head>

@@ -10,7 +10,17 @@
      
      */
 	
-    
+    let inputNum = prompt();
+    let num = Number(inputNum);
+    console.log(`입력한 정수값: ${num}`);
+
+    let sum = 0;
+    var i = 1;
+    while(i<=num) {
+      sum += i;
+      i++;
+    }
+    console.log(`1부터 입력한 정수값까지의 총합: ${sum}`);
 </script>
 </head>
 <body>

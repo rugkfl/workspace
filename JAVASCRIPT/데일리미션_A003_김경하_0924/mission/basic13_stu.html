@@ -10,7 +10,18 @@
      
      */
 	
-    
+  let allSum = 0;
+  let mulSum = 0;
+
+  for(let i = 1; i <= 100; i++) {
+    allSum += i;
+    if(i % 3 == 0) {
+      mulSum += i;
+    }
+  }
+  console.log(`1~100까지의 전체 총합: ${allSum}`);
+  console.log(`1~100까지의 3의배수 총합: ${mulSum}`);
+
 </script>
 </head>
 <body>

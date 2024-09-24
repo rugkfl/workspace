@@ -9,7 +9,15 @@
        코드 구현
      
      */
-	
+	for(let dice1 = 1; dice1 <= 6; dice1++) {
+    for(let dice2 = 1; dice2 <= 6; dice2++) {
+      for(let dice3 = 1; dice3 <= 6; dice3++) {
+        if((dice1 * dice2 * dice3) % 3 === 0) {
+          console.log(`${dice1} * ${dice2} * ${dice3} = ${dice1 * dice2 * dice3}`);
+        }
+      }
+    }
+  }
     
 </script>
 </head>
