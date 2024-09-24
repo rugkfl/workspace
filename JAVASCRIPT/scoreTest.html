@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 점수를 입력받아서 점수에 대한 level을 출력한다
+        // 90점 이상이면 A
+        // 80점 이상이면 B
+        // 70점 이상이면 C
+        // 60점 이상이면 D
+        // 그 외에는 F
+
+        let score = prompt();
+
+        if (score >= 90) {
+            document.write('A');
+        } else if (score >= 80) {
+            document.write('B');
+        } else if (score >= 70) {
+            document.write('C')
+        } else if (score >= 60) {
+            document.write('D');
+        } else {
+            document.write('F');
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
