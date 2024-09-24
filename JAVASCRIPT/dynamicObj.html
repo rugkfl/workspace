@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        let dataList = [1,2,3,4,5];
+        const Car = {};
 
-        for(let data in dataList) {
-            console.log(dataList[data]);
+        Car.name = "BMW";
+        Car.printInfo = function() {
+            document.write(this.name);
         }
 
-        for(let i=0; i < dataList.length; i++) {
-            console.log("===>" + dataList[i]);
-        }
+        Car.printInfo();
+        console.log(Car);
     </script>
 </head>
 <body>

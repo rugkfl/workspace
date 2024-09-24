@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // 카피해서 하나의 값을 바꾸면 다른 한쪽도 영향을 받음 => 객체 종류는 같은 주소를 가르키고 있기 때문 
+        const Exam = {
+            msg : "변경할 문자열"
+        }
+
+        const ExamCopy = Exam;
+
+        Exam.msg = "변경완료"
+        console.log(Exam.msg);
+        console.log(ExamCopy.msg);
+
+        // 변수는 값을 바라보기 있기 때문에 복사해서 값을 바꿔도 기존 값은 변경되지 않음
+        let num = 100;
+        let numTwo = num; // 100
+
+        num = 500;
+
+        console.log(num); // 500
+        console.log(numTwo); // 100
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

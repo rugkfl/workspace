@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function print(msg) {
+            document.write(msg);
+        }
+
+        const anno = function () {
+            console.log("익명 함수");
+        }
+
+        const test = (a, b) => {
+            console.log("이것도 익명 함수");
+        }
+
+        print("호호호");
+        anno();
+        test("aaa", "bbb");
+
+
+        (function(abc) {
+            console.log("호출이 될까???" + abc);
+        })("test");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const productList = [];
+
+        function Product(num, name, price) {
+            this.num = num;
+            this.name = name;
+            this.price = price;
+        }
+
+        productList[0] = new Product(1, "Computer", 5000);
+        productList[1] = new Product(2, "IPad", 3000);
+        productList[2] = new Product(3, "Galaxy-23", 4000);
+
+        // 1. prompt로 데이터를 입력받아서, productList 배열에 추가한다.
+        //      데이터 형태는 예) "4,TV,8000"
+        let product = prompt().split(",");
+        productList[productList.length] = new Product(product[0], product[1], product[2]);
+        console.log(productList[3]);
+
+        
+        // 2. productList에 있는 정보를 모두 출력한다.
+        let sum = 0;
+
+        for(data in productList) {
+            let num = productList[data].num;
+            let name = productList[data].name;
+            let price = productList[data].price;
+
+            sum += Number(price);
+
+            console.log(`${num} : ${name} : ${price}`);
+        }
+        // 3. 가격의 평균을 구하여 출력한다.
+        let avg = sum / productList.length;
+        console.log(`평균 : ${avg}`);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

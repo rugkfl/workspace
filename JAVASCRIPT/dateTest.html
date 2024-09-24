@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const today = new Date();
+        console.log(today);
+        document.write(today);
+
+        const otherDay = new Date(2020, 8, 24, 11, 20, 0);
+        console.log(otherDay);
+
+        const strDay = new Date("1968-01-01");
+        console.log("==>", strDay);
+        console.log(today.getDate());
+
+        today.setDate(today.getDate() + 100);
+        console.log(today);
+
+        let min = (today.getTime() - strDay.getTime())/ 60 / 60 / 24 / 1000 / 365;
+        console.log(min);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
