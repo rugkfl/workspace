@@ -7,9 +7,34 @@
 
    /*
      코드 작성
-
+    3의 배수 : foo
+    5의 배수 : bar
+    7의 배수 baz
    */
-   
+
+  let inputNum = prompt("정수값을 입력하시오");
+
+  let num = parseInt(inputNum);
+  let str = '';
+
+  if(num % 3 == 0) {
+    str += 'foo';
+  }
+
+  if(num % 5 == 0) {
+    str += (str ? ' ' : '') +'bar';
+  }
+
+  if(num % 7 == 0) {
+    str += (str ? ' ' : '' ) +'baz';
+  }
+  
+  if(str) {
+    console.log(`입력값 : ${num} ${str}`);
+  } else {
+    console.log(`입력값 : ${num}`);
+  }
+
 </script>
 </head>
 <body>

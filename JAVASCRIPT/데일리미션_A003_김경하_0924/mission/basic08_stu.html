@@ -9,6 +9,17 @@
      코드 작성
 
   */
+  let inputNumOne = prompt("정수값을 입력하시오");
+  let inputNumTwo = prompt("정수값을 입력하시오");
+
+  let numOne = Number(inputNumOne);
+  let numTwo = Number(inputNumTwo);
+  let numList = [numOne, numTwo];
+  
+  let maxNum = Math.max.apply(null, numList);
+  console.log(maxNum);
+
+
 	
 </script>
 </head>
