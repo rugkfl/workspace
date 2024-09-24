@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var : 같은 변수를 선언해도 에러 안남
+        var one = 10;
+        var one = 20;
+        console.log(one);
+        document.write(one);
+
+        let two = 'abc'; // 가능
+        // let two = "abc"; 가능
+        // let two = "xyz"; => error
+        two += "xyz";
+        console.log(two);
+        document.write("<br/>" + two);
+        document(`<br/>${two}`);
+
+        // three = 456; => error 재할당 안됨
+        // const three; 이렇게 먼저 값없이 먼저 선언하는것도 안됨
+        const three = 123;
+        console.log(three);
+        document.write("<br/>" + three);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
