@@ -6,6 +6,43 @@
 <script type="text/javascript">
 
    // 구현
+
+   function info() {
+      let str = document.querySelector("#str").value;
+
+      let str1 = document.querySelector("#str1");
+      let strLength = str.length;
+      str1.textContent = strLength;
+
+      let str2 = document.querySelector("#str2");
+      let strSplit = str.split('');
+      str2.textContent = strSplit;
+
+      let str3 = document.querySelector("#str3");
+      let strUpper = str.toUpperCase();
+      str3.textContent = strUpper;
+
+      let str4 = document.querySelector("#str4");
+      let strLower = str.toLowerCase();
+      str4.textContent = strLower;
+
+      let str5 = document.querySelector("#str5");
+      let split = str.split('');
+      let strReverse = split.reverse();
+      str5.textContent = strReverse;
+
+      let str6 = document.querySelector("#str6");
+      let strFirst = str.substr(0, 1);
+      str6.textContent = strFirst;
+
+      let str7 = document.querySelector("#str7");
+      let strThird = str.substr(2, 1);
+      str7.textContent = strThird;
+
+      let str8 = document.querySelector("#str8");
+      let strBetween = str.substr(0, 5);
+      str8.textContent = strBetween;
+   }
   
 </script>
 </head>

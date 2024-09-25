@@ -8,9 +8,22 @@
    /*
       배열값을 오름 차순 정렬 
    */
+
+//    양수 반환: a가 b보다 크면, sort()는 b를 a 뒤로 이동시킵니다.
+// 음수 반환: a가 b보다 작으면, sort()는 a를 b 앞에 위치시킵니다.
+// 0 반환: 두 요소가 같으면, 위치를 바꾸지 않습니다.
+
+  function asc(numbers) {
+   let sortNum = numbers.sort(function(a, b) {
+      return a - b;
+   });
+   
+   return sortNum;
+  }
    var arr = [ 11, 2, 33, 54, 5];
    var m = asc(arr);
    console.log("오름차순 정렬:", m );
+
 </script>
 
 </head>

@@ -8,7 +8,12 @@
    /*
       banana 글자포함하는 단어수 구하기
    */
-
+   function bananaCheck(strArr) {
+      let searchString = "banana";
+      let sameStr = strArr.filter(item => item.includes(searchString));
+      let result = sameStr.length;
+      return result;
+   }
    var arr = ['BANANA','melon','banana','apple', 'banana','bananaa'];
    var cnt = bananaCheck(arr);
    console.log("banana 글자 포함 단어 갯수:", cnt );

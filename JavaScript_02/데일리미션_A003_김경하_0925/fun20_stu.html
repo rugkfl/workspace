@@ -6,13 +6,26 @@
 <script type="text/javascript">
 
      /* 코드 구현 */
+     function strSum() {
+          let v1 = document.querySelector("#v1").value;
+          let split = v1.split('/');
+          let sum = 0;
+
+          for(let i = 0; i < split.length; i++) {
+               sum += parseInt(split[i]);
+          }
+
+          let result = document.querySelector("#result");
+          result.textContent = sum;
+          
+     }
   
 </script>
 </head>
 <body>
 <h3>문자열 처리</h3>
 값:<input type="text" name="v1" id="v1" value="10/20/30">
-<button>합계</button><br>
+<button onclick="strSum()">합계</button><br>
 합계:<span id="result"></span>
 </body>
 </html>
