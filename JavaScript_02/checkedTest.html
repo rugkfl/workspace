@@ -8,11 +8,29 @@
     <script>
         function checkedTest() {
             // radio 버튼 확인
-            let radioList = document.querySelector("[type='radio']"); // 속성 값 찾기 
+            let radioList = document.querySelectorAll("[type='radio']"); // 속성 값 찾기 
+            let value;
 
             for(let i = 0; i < radioList.length; i++) {
-                console.log( radioList[i].checked );
+                if(radioList[i].checked) {
+                    value = radioList[i].value;
+                }
             }
+            console.log("Radio 선택된 값 : ", value );
+
+            // ------------------------------
+            // checkbox 버튼 확인
+            let checkboxList = document.querySelectorAll("[type='checkbox']"); // 속성 값 찾기 
+            let valueList = "";
+
+            for(let i = 0; i < checkboxList.length; i++) {
+                if(checkboxList[i].checked) {
+                    valueList += checkboxList[i].value + ", ";
+                }
+            }
+            console.log("Checkbox 선택된 값 : ", valueList );
+
+            
         }
     </script>
 </head>
