@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+        </ul>
+    </div>
+    <div id="second">
+        <input type="text">
+    </div>
+
+    <script>
+        let txt = document.createTextNode("four"); // 텍스트 추가
+        let liEle = document.createElement("li"); // 태그 추가
+        let ulEle = document.querySelector("ul");
+
+        liEle.appendChild(txt); // li의 자식 태그로 
+        ulEle.appendChild(liEle); // ul의 자식 태그로 붙어랏
+
+        let divEle = document.querySelector("#second");
+        let inputEle = document.createElement("input");
+        inputEle.setAttribute("type", "submit");
+        inputEle.setAttribute("value", "버튼");
+
+        divEle.appendChild(inputEle);
+
+        // ------------------------------
+
+        let ul = document.querySelector("ul");
+        let liList = document.querySelectorAll("li");
+
+        for(let i = 0; i < liList.length; i++) {
+            let data = liList[i].innerText;
+
+            if(data === "two") {
+                ul.removeChild(liList[i]);
+                break;
+            }
+        }
+    </script>
+</body>
+</html>

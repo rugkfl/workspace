@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function formHandle() {
+            // let formEle = document.querySelector("form");
+            let formEle = document.myForm; // form 이름을 부여해주면 이 방식으로 찾는 것이 가능 
+            console.log(formEle.id.value);
+            console.log(formEle.pwd.value);
+            console.log(formEle.name.value);
+
+            // document.myForm.id.value
+        }
+    </script>
+</head>
+<body>
+    <form action="" name="myForm">
+        ID : <input type="text" name="id"><br>
+        PWD : <input type="password" name="pwd"><br>
+        NAME : <input type="text" name="name"><br>
+    </form>
+    <button onclick="formHandle()">확인</button>
+    
+</body>
+</html>

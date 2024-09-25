@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function checkedTest() {
+            // radio 버튼 확인
+            let radioList = document.querySelector("[type='radio']"); // 속성 값 찾기 
+
+            for(let i = 0; i < radioList.length; i++) {
+                console.log( radioList[i].checked );
+            }
+        }
+    </script>
+</head>
+<body>
+    first : <input type="radio" name="one" value="first">
+    second : <input type="radio" name="one" value="second">
+    <hr>
+    야구 : <input type="checkbox" name="sports" value="baseball">
+    축구 : <input type="checkbox" name="sports" value="soccer">
+    <hr>
+    <button onclick="checkedTest()">확인</button>
+</body>
+</html>
