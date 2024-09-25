@@ -9,17 +9,28 @@
        코드 구현
      
      */
-     let result = "";
-      for (i = 1; i <= 100; i++) {
-        result += i + " ";
+    //  let result = "";
+    //   for (i = 1; i <= 100; i++) {
+    //     result += i + " ";
 
-        if (i % 10 === 0) {
-          console.log(result);
-          result = "";
+    //     if (i % 10 === 0) {
+    //       console.log(result);
+    //       result = ""; // result 초기화
+    //     }
+    //   }
+
+      // 강사님 코드
+      let msg = "";
+      for(let i = 1; i<= 100; i++){
+        msg += i + ",";
+
+        if(i % 10 == 0) {
+          console.log(msg);
+          // msg = "";
+          msg += "\n";
         }
       }
-
-      
+      console.log(msg);
 </script>
 </head>
 <body>
