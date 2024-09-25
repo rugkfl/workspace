@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<script type="text/javascript">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <script type="text/javascript">
+      let count = 0;
+      let sum = 0;
+      let firstNum = 3;
+      let numArray = [];
 
-  
-      /*
-                  함수 구현
-      */
-
-</script>
-</head>
-<body>
-<h3>배수 출력</h3>
-<button>3의 배수</button>
-<div id="result">
-</div>
-</body>
+      function triple() {
+        count++;
+        let nextNum = count * firstNum;
+        sum += nextNum;
+        numArray.push(nextNum);
+        console.log(numArray);
+        document.querySelector(
+          "#result"
+        ).innerHTML = `${numArray} <br/>클릭한 수: ${count} <br/> 합계: ${sum}`;
+      }
+    </script>
+  </head>
+  <body>
+    <h3>배수 출력</h3>
+    <button onclick="triple()">3의 배수</button>
+    <div id="result"></div>
+  </body>
 </html>
