@@ -10,14 +10,34 @@
        함수 구현
     
     */
-   
+   function data() {
+    let v1 = document.querySelector("#v1").value;
+    let split = v1.split(",").map(Number);
+
+    //1.정렬
+    // 2. 합계
+    // 3. 평균
+    // 4. 중앙값
+
+    console.log(split.sort((a,b) => a - b))
+  
+
+    if(split.length % 2== 0){
+        console.log((split[(split.length/2) -1] + split[(split.length/2)] ) /2)
+    }
+    else{
+        
+        console.log( split[(split.length/2) -1] ) 
+    }
+    
+   }
   
 </script>
 </head>
 <body>
 <h3>배열 관리</h3>
 값:<input type="text" name="v1" id="v1" value="1,5,10,9,3,7,23,4,6,8">
-<button>데이터 분석</button><br>
+<button onclick="data()">데이터 분석</button><br>
 <div id="result"></div>
 </body>
 </html>
