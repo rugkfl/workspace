@@ -30,7 +30,16 @@
             }
             console.log("Checkbox 선택된 값 : ", valueList );
 
-            
+            //-------------------------
+            let optionList = document.querySelectorAll("option");
+            let selectVal;
+
+            for(let i = 0; i < optionList.length; i++) {
+                if(optionList[i].selected) {
+                    selectVal = optionList[i].value;
+                }
+            }
+            console.log(selectVal);
         }
     </script>
 </head>
@@ -40,6 +49,13 @@
     <hr>
     야구 : <input type="checkbox" name="sports" value="baseball">
     축구 : <input type="checkbox" name="sports" value="soccer">
+    <hr>
+    계절 <select name="" id="">
+            <option value="봄">봄</option>
+            <option value="여름">여름</option>
+            <option value="가을">가을</option>
+            <option value="겨울">겨울</option>
+        </select>
     <hr>
     <button onclick="checkedTest()">확인</button>
 </body>
