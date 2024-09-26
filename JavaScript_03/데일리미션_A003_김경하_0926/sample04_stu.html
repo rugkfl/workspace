@@ -8,18 +8,23 @@
       //이미지 정보를 배열에 저장하여 관리
       var arr = ["a.jpg","b.jpg", "c.jpg"];
       var i = 0;
-
+      
+      window.onload = function() {
+            // let result = document.querySelector("#result");
+      }
       function before() {
+            let result = document.querySelector("#result");
             var img = document.querySelector("#my");
             if(i > 0) {
                   i--;
                   img.src = arr[i];
             }
-            result.innerHTML = arr[i];      
+            result.innerHTML = arr[i];   
+            console.log(arr[i]);   
       }
 
       function next() {
-            let result = document.querySelector("#result");
+            // let result = document.querySelector("#result");
             var img = document.querySelector("#my");
             if(i < arr.length -1) {
                   i++;

@@ -11,17 +11,19 @@
             let inputVal = $("#quantity").val();
             let numVal = parseInt(inputVal);
 
-            if(!isNaN(numVal)) {
+            // if(numVal) { 
+                console.log(numVal);
                 numVal++;
                 $("#quantity").val(numVal);
-            }
+        
+            // }
         });
 
         $("#down").on("click", function() {
             let inputVal = $("#quantity").val();
             let numVal = parseInt(inputVal);
 
-            if(!isNaN(numVal)) {
+            if(numVal>1) {
                 numVal--;
                 $("#quantity").val(numVal);
             }

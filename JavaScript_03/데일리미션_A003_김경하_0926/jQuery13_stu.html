@@ -13,6 +13,9 @@
 
             $("input:checkbox[name=hobby]:checked").each(function (index) {
                 chkArr.push($(this).val()); 
+                console.log($(this).val());
+                chkArr[index]
+                console.log(index);
             });
 
             console.log(chkArr);
