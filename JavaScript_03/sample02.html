@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-2.2.4.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $("div li").css("color", "green");
+            // $("input[type='text']").val("하하하"); // input에 default값 넣기
+            $("input:text").val("ㅎ호호"); // input에 default값 넣기
+        });
+    </script>
+
+</head>
+<body>
+    <input type="text">
+    <div>
+        <ul>
+            <li>사과</li>
+            <li>포도</li>
+            <li>오렌지</li>
+            <li>수박</li>
+        </ul>
+    </div>
+    
+</body>
+</html>

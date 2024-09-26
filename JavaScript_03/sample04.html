@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-2.2.4.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $("tr:odd").css("background-color", "gray"); // odd : 홀수 번째
+        });
+    </script>
+
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>작성일자</th>
+            <th>조회수</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>첫번째</td>
+            <td>홍길동</td>
+            <td>2024-09-26</td>
+            <td>11</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>두번째</td>
+            <td>김길동</td>
+            <td>2024-09-26</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>세번째</td>
+            <td>박길동</td>
+            <td>2024-09-26</td>
+            <td>110</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>네번째</td>
+            <td>이길동</td>
+            <td>2024-09-26</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>다섯번째</td>
+            <td>최길동</td>
+            <td>2024-09-26</td>
+            <td>21</td>
+        </tr>
+    </table>
+</body>
+</html>
