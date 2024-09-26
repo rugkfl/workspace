@@ -9,7 +9,7 @@
     function getBrowserInfo() {
         let nameEle = document.querySelector("#bName");
         let name = navigator.appName; // 브라우저의 이름
-        nameEle.textContent = name;
+        nameEle.innerHTML = name;
 
         let versionEle = document.querySelector("#bVersion");
         let version = navigator.appVersion; // 브라우저의 버전
@@ -17,7 +17,7 @@
 
         let onlineEle = document.querySelector("#bOnLine");
         let online = navigator.onLine; // 브라우저 버전
-        onlineEle.textContent = online;
+        onlineEle.innerHTML = online;
 
 
     }

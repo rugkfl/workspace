@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="http://www.google.co.kr">구글</a>
+
+    <script>
+        let aEle = document.querySelector("a");
+        aEle.onclick = (e) => {
+            console.log("내가 만든 이벤트");
+            e.preventDefault(); // 이 함수를 쓰면 링크 걸어놓은 곳으로 안넘어감
+            
+        }
+    </script>
+</body>
+</html>
