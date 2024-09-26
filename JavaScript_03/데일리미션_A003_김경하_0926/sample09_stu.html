@@ -4,14 +4,20 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
+    function check(all) {
+        let langs = document.querySelectorAll(".lang");
 
+        for(let i = 0; i < langs.length; i++) {
+            langs[i].checked = all.checked; // 전체 선택 상태를 각 체크박스에 적용
+        }
+    }
   
 
 </script>
 </head>
 <body>
-전체선택
-<input type="checkbox" name="all" onclick=""><br>
+전체선택 <!-- this: 전체 선택 체크박스를 참조-->
+<input type="checkbox" name="all" onclick="check(this)"><br> 
 <input type="checkbox" name="java" class="lang">java<br>
 <input type="checkbox" name="sql" class="lang">sql<br>
 <input type="checkbox" name="angular" class="lang">angular<br>

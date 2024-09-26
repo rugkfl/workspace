@@ -8,8 +8,18 @@
 
    $(document).ready(function() {
      
-	   //구현
-	   
+	$("button").on("click", function() {
+            let chkArr = [];
+
+            $("input:checkbox[name=hobby]:checked").each(function (index) {
+                chkArr.push($(this).val()); 
+            });
+
+            console.log(chkArr);
+            $("#result").text(chkArr.join(" "));
+            
+        })
+    
 	});
 
 </script>

@@ -3,8 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="../jquery-2.2.4.min.js"></script>
 <script type="text/javascript">
+    $(document).ready(() => {
+        $("#passwd").on("input", function() {
+            let pw1 = $("#passwd").val();
+            let pw2 = $("#passwd1").val();
+            let result = $("#result").val();
 
+            if(pw1 === pw2) {
+                $("#result").text("비밀번호 일치");
+            } else {
+                $("#result").text("비밀번호 불일치");
+            }
+        })
+    })
+
+    $(document).ready(() => {
+        $("#passwd1").on("input", function() {
+            let pw1 = $("#passwd").val();
+            let pw2 = $("#passwd1").val();
+            let result = $("#result").val();
+
+            if(pw1 === pw2) {
+                $("#result").text("비밀번호 일치");
+            } else {
+                $("#result").text("비밀번호 불일치");
+            }
+        })
+    })
    
 
 </script>

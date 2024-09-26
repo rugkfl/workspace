@@ -7,10 +7,17 @@
 <script type="text/javascript">
 
    $(document).ready(function() {
-       
-   	  //구현
+		$("input[name=all]s").click( function() {
+			if( $(this).is(":checked") === true ) {
+				$(".lang").prop("checked", true); // // 체크박스를 체크 상태로 설정
+			} else {
+				$(".lang").prop("checked", false);
+			}
+		});
    	   
    	});
+
+	   
 </script>
 </head>
 <body>
