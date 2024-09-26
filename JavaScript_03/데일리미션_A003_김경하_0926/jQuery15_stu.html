@@ -7,9 +7,21 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
 
-    
     $(document).ready(function() {
-		 //구현
+		$("input:submit").on("click", function(e) {
+			let id =  $("#userid").val();
+			let pwd =  $("#passwd").val();
+	
+			if(id == "") {
+				e.preventDefault(); // 이벤트 취소
+				alert("아이디값을 입력하시오.");
+			}
+
+			if(pwd == "") {
+				e.preventDefault();
+				alert("비밀번호를 입력하시오.");
+			}
+		})
 	});
 </script>
 </head>

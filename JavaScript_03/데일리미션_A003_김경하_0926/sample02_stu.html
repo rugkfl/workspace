@@ -3,26 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="../jquery-2.2.4.min.js"></script>
+
 
 <script type="text/javascript">
-    $(document).ready(() => {
-        
-        $("button").on("click", function() {
-            let chkArr = [];
+    
+    function result() {
+        let result = document.querySelector("#result");
 
-            $("input:checkbox[name=hobby]:checked").each(function (index) {
-                chkArr.push($(this).val()); 
-            });
+        let arr = document.querySelectorAll("input[name='hobby']");
+        let str = ""; // 출력값
 
-            console.log(chkArr);
-            $("#result").text(chkArr.join(" "));
-            
-        })
+        for(let i = 0; i < arr.length; i++) {
+            let chk = arr[i];
+            if(chk.checked) {
+                str += chk.value + " ";
+            }
+        }
         
+        result.innerHTML = str;
+        console.log(str);
 
-        
-    });
+    }
  
 </script>
 </head>
@@ -33,7 +34,7 @@
 <li>농구<input type="checkbox" name="hobby" value="농구"></li>
 <li>게임<input type="checkbox" name="hobby" value="게임"></li>
 </ul>
-<button>결과보기</button><br>
+<button onclick="result()">결과보기</button><br>
 결과값:<span id="result"></span>
 </body>
 </html>
