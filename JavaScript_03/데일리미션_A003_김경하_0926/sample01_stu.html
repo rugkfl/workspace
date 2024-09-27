@@ -3,39 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="../jquery-2.2.4.min.js"></script>
+<!-- <script src="../jquery-2.2.4.min.js"></script> -->
 
 <script type="text/javascript">
-    $(document).ready(() => {
-        $("#up").on("click", function() {
-            let inputVal = $("#quantity").val();
-            let numVal = parseInt(inputVal);
+    // $(document).ready(() => {
+    //     $("#up").on("click", function() {
+    //         let inputVal = $("#quantity").val();
+    //         let numVal = parseInt(inputVal);
 
-            // if(numVal) { 
-                console.log(numVal);
-                numVal++;
-                $("#quantity").val(numVal);
+    //         // if(numVal) { 
+    //             console.log(numVal);
+    //             numVal++;
+    //             $("#quantity").val(numVal);
         
-            // }
+    //         // }
+    //     });
+
+    //     $("#down").on("click", function() {
+    //         let inputVal = $("#quantity").val();
+    //         let numVal = parseInt(inputVal);
+
+    //         if(numVal>1) { // 음수로 넘어가지 않게 하기 위한 조건
+    //             numVal--;
+    //             $("#quantity").val(numVal);
+    //         }
+    //     });
+    // });
+    
+    const init = () => {
+        let up = document.querySelector("#up");
+        let down = document.querySelector("#down");
+        
+        let result = document.querySelector("#quantity");
+
+        up.addEventListener("click", () => {
+            result.value = Number(result.value) + 1;
         });
 
-        $("#down").on("click", function() {
-            let inputVal = $("#quantity").val();
-            let numVal = parseInt(inputVal);
-
-            if(numVal>1) {
-                numVal--;
-                $("#quantity").val(numVal);
+        down.addEventListener("click", () => {
+            if(result.value > 0) {
+                result.value = Number(result.value) - 1;
             }
         });
-    });
-    
+    }
    
 
 
 </script>
 </head>
-<body>
+<body onload="init()">
 갯수<input type="text" name="quantity"  id="quantity" value="1">
 <button id="up">+</button><button id="down">-</button>
 </body>

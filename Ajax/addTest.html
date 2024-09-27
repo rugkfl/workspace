@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // $("div").css("color", "blue");
+            // $("p").css("background-color", "green");
+
+            // add : add 함수는 jQuery에서 선택한 요소에 추가적으로 다른 선택자를 결합하는 기능
+            $("div").css("color", "red")
+            .add("p").css("background-color", "gray");
+        });
+    </script>
+</head>
+<body>
+    add 연습
+    <div>100</div>
+    <p>200</p>
+</body>
+</html>

@@ -9,21 +9,32 @@
    $(document).ready(function() {
      
 	$("button").on("click", function() {
-            let chkArr = [];
+        //     let chkArr = [];
 
-            $("input:checkbox[name=hobby]:checked").each(function (index) {
-                chkArr.push($(this).val()); 
-                console.log($(this).val());
-                chkArr[index]
-                console.log(index);
+        //     $("input:checkbox[name=hobby]:checked").each(function (index) {
+        //         chkArr.push($(this).val()); 
+        //         console.log($(this).val());
+        //         chkArr[index]
+        //         console.log(index);
+        //     });
+
+        //     console.log(chkArr);
+        //     $("#result").text(chkArr.join(" "));
+            
+   
+
+        let result = "";
+
+        $("button").on("click", () => {
+            $("input:checked").each(function(index, item) {
+                result += $(item).val() + " ";
             });
 
-            console.log(chkArr);
-            $("#result").text(chkArr.join(" "));
-            
+            $("div").html(result);
         })
     
 	});
+})
 
 </script>
 </head>

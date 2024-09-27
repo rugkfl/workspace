@@ -7,12 +7,21 @@
 <script type="text/javascript">
 
    $(document).ready(function() {
-		$("input[name=all]s").click( function() {
-			if( $(this).is(":checked") === true ) {
-				$(".lang").prop("checked", true); // // 체크박스를 체크 상태로 설정
-			} else {
-				$(".lang").prop("checked", false);
-			}
+		// $("input[name=all]").click( function() {
+		// 	if( $(this).is(":checked") === true ) {
+		// 		$(".lang").prop("checked", true); // // 체크박스를 체크 상태로 설정
+		// 	} else {
+		// 		$(".lang").prop("checked", false);
+		// 	}
+		// });
+
+		$("#all").on("click", (e) => {
+			let result = e.target.checked;
+			console.log(result);
+
+			$("div > input").each(function(index, item) {
+				item.checked = result;
+			});
 		});
    	   
    	});
@@ -21,10 +30,11 @@
 </script>
 </head>
 <body>
-전체선택
-<input type="checkbox" name="all" id="all"><br>
-<input type="checkbox" name="java" class="lang">java<br>
-<input type="checkbox" name="sql" class="lang">sql<br>
-<input type="checkbox" name="angular" class="lang">angular<br>
+	전체선택<input type="checkbox" name="all" id="all"><br>
+	<div>
+		<input type="checkbox" name="java" class="lang">java<br>
+		<input type="checkbox" name="sql" class="lang">sql<br>
+		<input type="checkbox" name="angular" class="lang">angular<br>
+	</div>
 </body>
 </html>
