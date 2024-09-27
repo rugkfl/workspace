@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            let doc = "<list>";
+                doc += "<data>";
+                    doc += "<name>hong</name>";
+                    doc += "<price>1000</price>";
+                doc += "</data>";
+
+              
+                doc += "<data>";
+                    doc += "<name>kim</name>";
+                    doc += "<price>1000</price>";
+                doc += "</data>";
+
+                doc += "<data>";
+                    doc += "<name>Lee</name>";
+                    doc += "<price>1000</price>";
+                doc += "</data>";
+            
+                
+                doc += "<data>";
+                    doc += "<name>park</name>";
+                    doc += "<price>1000</price>";
+                doc += "</data>";
+            doc += "</list>";
+
+            let xmlData = $.parseXML(doc);
+            let result = "";
+            $(xmlData).find("data").each(function(index, item) {
+                let nameVal = $(item).find("name").text();
+                let priceVal = $(item).find("price").text();
+
+                result += "<tr>";
+                    result += "<td>" + nameVal + "</td>";
+                    result += "<td>" + nameVal + "</td>";
+                result += "</tr>";
+                
+                
+            });
+
+            $("table").html(result);
+
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <table border="1">
+
+        </table>
+    </div>
+</body>
+</html>

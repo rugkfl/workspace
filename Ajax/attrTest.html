@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            console.log($("a").attr("href"));
+            console.log($("a"));
+
+            // $("a").attr("href", "http://www.google.co.kr"); // 속성을 바꾸거나 추가 가능
+            // $("a").attr("style", "text-decoration:none");
+            // $("a").attr("class", "test");
+
+            $("a").attr({
+                "href" : "http://www.google.co.kr",
+                "style" : "text-decoration:none",
+                "class" : "test"
+            });
+            $("a").removeAttr("style"); // 속성 제거
+        });
+    </script>
+</head>
+<body>
+    <a href="http://www.naver.com">네이버</a>
+    <!-- <a href="http://www.daum.net">다음</a> -->
+</body>
+</html>

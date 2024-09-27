@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $("div").html("<h1>삽입 데이터</h1>");
+            $("p").text("<h1>삽입 데이터</h1>"); // 태그를 텍스트로 인식해서 h1태그를 인식 못함
+            // $("span").remove(); // span태그에 있는 값을 지워버림 => 태그 자체가 없어짐
+            $("span").empty(); // 값을 지우지만 태그는 남아있음
+            
+            let newEl = $("<h1></h1>").html("하하ㅏㅏ");
+            newEl.appendTo("body"); // newEl에다가 body를 집어넣음 원하는 위치에 갖다 붙이기
+
+            let newElTwo = $("<p>두번째</p>"); // body에다가 newElTwo를 집어넣음
+            $("body").append(newElTwo, "<p>세번째</p>", "<p>네번째</p>", "<p>다섯번째</p>"); 
+        });
+
+        // newEl.appendTo("body");
+
+        // 이 구문은 newEl 요소를 선택한 후, 그 요소를 "body"에 추가합니다.
+        // 즉, newEl이 해당 구문을 호출한 후에 "body"의 자식 요소가 됩니다.
+        // $("body").append(newElTwo);:
+
+        // 이 구문은 "body"를 선택하고, 그 안에 newElTwo를 추가합니다.
+        // 여기서는 "body" 요소를 먼저 선택한 후, 그 안에 newElTwo를 자식으로 추가합니다.
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <p></p>
+    <span>제거 대상 데이터</span>
+</body>
+</html>

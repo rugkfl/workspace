@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+  
+
+   var arr = [];  
+   $(document).ready(function() {
+		$("#btn").on("click", function() {
+         let v1 = $("#v1").val() + "<br>";
+         console.log(v1);
+
+         if(v1 != "") {
+            arr.push(v1);
+         }
+         
+         for(let i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+            $("#result").html(arr);
+         } $("#v1").val(""); // 버튼 누르고 난 후 입력창 초기화
+      });
+   });
+   
+</script>
+</head>
+<body>
+ 값:<input type="search" name="v1" id="v1">
+ <button id="btn">저장</button><br>
+ 
+ <div id="result">
+ 
+ </div>
+
+</body>
+</html>

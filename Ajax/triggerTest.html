@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $("#one").on("click", function() {
+                console.log("====>", "One Button Click");
+            })
+
+            $("#two").on("click", function() {
+                console.log("---->", "Two Button Click");
+                $("#one").trigger("click"); // click 이벤트 강제 발생 => 권장
+                // $("#one").click(); // click실행 시켜버렷 / 메소드 강제 콜
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <button id="one">One</button>
+    <button id="two">Two</button>
+</body>
+</html>
