@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+      //이미지 정보를 배열에 저장하여 관리
+      var arr = ["a.jpg","b.jpg", "c.jpg"];
+      var i = 0;
+      
+      // window.onload = function() {
+      //       // let result = document.querySelector("#result");
+      // }
+      // function before() {
+      //       let result = document.querySelector("#result");
+      //       var img = document.querySelector("#my");
+      //       if(i > 0) {
+      //             i--;
+      //             img.src = arr[i];
+      //       }
+      //       result.innerHTML = arr[i];   
+      //       console.log(arr[i]);   
+      // }
+
+      // function next() {
+      //       // let result = document.querySelector("#result");
+      //       var img = document.querySelector("#my");
+      //       if(i < arr.length -1) {
+      //             i++;
+      //             img.src = arr[i];
+      //       }
+      //       result.innerHTML = arr[i];
+      // }
+      
+      const init = () => {
+            let pre = document.querySelector("#pre");
+            let next = document.querySelector("#next");
+            let img = document.querySelector("img");
+            let span = document.querySelector("span");
+
+            pre.addEventListener("click", ()=> {
+                  i--;
+
+                  if(i < 0) {
+                        i++;
+                  }
+
+                  img.setAttribute("src", arr[i]);
+                  span.innerHTML = arr[i];
+            });
+
+            next.addEventListener("click", () => {
+                  i++;
+
+                  if(i === arr.length) {
+                        i--;
+                  }
+
+                  img.setAttribute("src", arr[i]);
+                  span.innerHTML = arr[i]
+                  
+            });
+      }
+
+</script>
+</head>
+<body onload="init()"> <!-- onload="init()"-->
+이미지 변경하기<br>
+<img src="a.jpg" width="100" height="100" id="my">
+<button id="pre">이전</button> <!--onclick="before()"-->
+<button id="next">다음</button><br> <!--onclick="next()"-->
+이미지 파일명:<span id="result"></span>
+</body>
+</html>

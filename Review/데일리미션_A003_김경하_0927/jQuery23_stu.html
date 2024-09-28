@@ -8,16 +8,17 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
-	var sum = 0;
+	// var sum = 0;
 	
 	$("#sum").on("click", function() {
+		let sum = 0; // 초기화 => 합계가 한번만 이루어질 수 있게
 		$("ul > li").each(function(index) {
 			sum += Number($(this).text());
 		});
 		console.log(sum);
 		$("#result").html(sum);
 	});
-	
+
 });
 </script>
 </head>
