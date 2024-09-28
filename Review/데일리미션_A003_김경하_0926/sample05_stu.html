@@ -4,37 +4,26 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-    window.onload = function(){
-    let imgs = document.querySelectorAll("img");
-    let txt = document.querySelector("#result");
 
-    imgs.forEach((img) => {
-        img.addEventListener("mouseover", function() {
-            let fileName = this.src.split('/').pop(); // pop() : 항상 배열의 마지막 요소를 제거
-            txt.innerHTML = `<h1>${fileName}</h1>`;
-            
-        })
+    window.onload = () => {
+        let imgs = document.querySelectorAll("img");
+        let result = document.querySelector("#result");
+        for(let i = 0; i < imgs.length; i++){
+            imgs[i].addEventListener("mouseover", function() {
+            console.log(imgs[i]);
+            result.innerHTML = "<h1>" + imgs[i].getAttribute("src") + "</h1>";
+        });
 
-    })
+            imgs[i].addEventListener("mouseleave", function() {
+                result.innerHTML = "";
+            })
 
- 
-    };
-
-    // const init  = () => {
-    //     let imgList = document.querySelectorAll("img");
-    //     let span = document.querySelector("span");
-
-    //     for(let i = 0; i < imgList.length; i++) {
-    //         imgList[i].addEventListener("mouseover", () => {
-    //             span.innerHTML = "<h1>" + imgList[i].getAttribute("src") + "</h1>";
-    //         });
-    //     }
-
-    // }
+        }
+    }
 
 </script>
 </head>
-<body onload="init()">
+<body>
 이미지 이름 알아보기<br>
 <img src="a.jpg" width="100" height="100">
 <img src="b.jpg" width="100" height="100">

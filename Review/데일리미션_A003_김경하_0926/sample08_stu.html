@@ -5,62 +5,42 @@
 <title>Insert title here</title>
 <!-- <script src="../jquery-2.2.4.min.js"></script> -->
 <script type="text/javascript">
-    // $(document).ready(() => {
-    //     $("#passwd").on("input", function() {
-    //         let pw1 = $("#passwd").val();
-    //         let pw2 = $("#passwd1").val();
-    //         let result = $("#result").val();
+//    window.onload = () => {
+//     let pwd01 = document.querySelector("#passwd");
+//     let result = document.querySelector("#result");
 
-    //         if(pw1 === pw2) {
-    //             $("#result").text("비밀번호 일치");
-    //         } else {
-    //             $("#result").text("비밀번호 불일치");
-    //         }
-    //     })
-    // })
+//     pwd01.addEventListener("input", function() {
+//         let value01 = pwd01.value;
+//         console.log(value01);
+//     });
 
-    // $(document).ready(() => {
-    //     $("#passwd1").on("input", function() {
-    //         let pw1 = $("#passwd").val();
-    //         let pw2 = $("#passwd1").val();
-    //         let result = $("#result").val();
+//    }
 
-    //         if(pw1 === pw2) {
-    //             $("#result").text("비밀번호 일치");
-    //         } else {
-    //             $("#result").text("비밀번호 불일치");
-    //         }
-    //     })
-    // })
-   const init = () => {
-        let checkPWd = document.querySelector("checkedPwd");
-        let pwd = document.querySelector("#pwd");
-        let span = document.querySelector("span");
+   function init() {
+        let pwd01 = document.querySelector("#passwd");
+        let pwd02 = document.querySelector("#passwd1");
+        let result = document.querySelector("#result");
 
-        pwd.addEventListener("keyup", () => {
-            sameCheck();
-
-        });
-
-        checkPWd.addEventListener("keyup", () => {
-            sameCheck();
-
-        });
-
-        const sameCheck = () => {
-            if(pwd.valeu == checkPWd.valeu) {
-                span.innerHTML = "일치";
-            } else {
-                span.innerHTML = "불일치";
-            }
+        if(pwd01.value == pwd02.value) {
+            result.innerHTML = "비밀번호 일치";
+        } else {
+            result.innerHTML = "비밀번호 불일치";
         }
-   }
+        pwd01.addEventListener("keyup", function() {
+        if(pwd01.value == pwd02.value) {
+            result.innerHTML = "비밀번호 일치";
+        } else {
+            result.innerHTML = "비밀번호 불일치";
+        }
+        });
+    }
+    
 </script>
 </head>
-<body onload="init()">
+<body>
  비밀번호 확인 구현<br>
  비밀번호<input type="text" name="passwd" id="passwd"><br>
- 비밀번호 재확인<input type="text" id="checkedPwd" name="passwd1" id="passwd1" onkeyup="">
+ 비밀번호 재확인<input type="text" name="passwd1" id="passwd1" onkeyup="init()">
  <span id='result'></span>
 </body>
 </html>

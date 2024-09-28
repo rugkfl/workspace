@@ -8,12 +8,30 @@
 <script type="text/javascript">
    
    
+window.onload = () => {
 
+    let up = document.querySelector("#up");
+    let down = document.querySelector("#down");
+    let val = document.querySelector("#quantity");
+
+    // console.log(val.value);
+    up.addEventListener("click", function() {
+        Number(val.value++);
+    })
+
+    down.addEventListener("click", function() {
+        if(val.value > 0) {
+            Number(val.value--);
+        }
+        
+    })
+}
 
 </script>
 </head>
 <body>
 갯수<input type="text" name="quantity"  id="quantity" value="1">
-<button id="up">+</button><button id="down">-</button>
+<button id="up">+</button>
+<button id="down">-</button>
 </body>
 </html>

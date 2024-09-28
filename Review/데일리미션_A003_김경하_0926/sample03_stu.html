@@ -6,28 +6,26 @@
 <!-- <script src="../jquery-2.2.4.min.js"></script> -->
 
 <script type="text/javascript">
-    // $(document).ready(() => {
-    //     $("textarea").on("input", function() {
-    //         let txt = $(this).val();
-    //         $("#result").text(txt.length);
-    //     });
-    // });
-    
-    const init = () => {
-        let ta = document.querySelector("textarea");
-
-        ta.addEventListener("keyup", () => {
-            let data = ta.value;
-
-            let span = document.querySelector("span");
-            span.innerHTML = data.length;
-
-        })
+    window.onload = () => {
+        let txt = document.querySelector("#txt");
+        let result = document.querySelector("#result");
+        
+        txt.addEventListener("input", function() {
+            let text = txt.value;
+            let count = 0;
+            
+            for(let i = 0; i < text.length; i++) {
+                count++;
+            }
+            console.log(count);
+            result.innerHTML = count;
+        });
+        
     }
 
 </script>
 </head>
-<body onload="init()">
+<body>
 글자수 세기<br>
 <textarea id="txt" rows="10" cols="10"></textarea><br>
 입력문자수:<span id="result"></span>

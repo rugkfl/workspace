@@ -4,49 +4,30 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-    // function check(all) {
-    //     let langs = document.querySelectorAll(".lang");
-
-    //     for(let i = 0; i < langs.length; i++) {
-    //         langs[i].checked = all.checked; // 전체 선택 상태를 각 체크박스에 적용
-    //     }
-    // }
-  
-    const init = () => {
-        let all = document.querySelector("#all");
-        let inputList = document.querySelectorAll("div > input");
-
-        for(let i = 0; i < inputList.length; i++) {
-            inputList[i].addEventListener("click", () => {
-                if(!inputList[i].checked) {
-                    all.checked = false;
-                } else {
-                    let isAll = true;
-
-                    for(let j = 0; j < inputList.length; i++) { 
-                        if(!inputList[j].checked) {
-                            isAll = false;
-                            break;
-                        } 
-                    }
-                    all.checked = isAll;
-                }
-            });    
+   window.onload = () => {
+    let inputArr = document.querySelectorAll(".lang");
+    let isAll = document.querySelector("input[name=all]");
+    
+    isAll.addEventListener("click", function() {
+        let checkResult = isAll.checked; // true 
+        for(let i = 0; i < inputArr.length; i++) {
+            inputArr[i].checked = checkResult;
         }
+    
+    });
 
-        all.addEventListener("click", () => {
-            let checkResult = all.checked;
-            // console.log(checkResult); true / false
-                for(let i = 0; i < inputList.length; i++) {
-                    inputList[i].checked = checkResult;
-                }
+    inputArr.forEach(function(box) {
+        box.addEventListener("click", function() {
+            
         });
-    }
+    });
+    
+   }
 </script>
 </head>
-<body onload="init()">
+<body>
     전체선택 <!-- this: 전체 선택 체크박스를 참조-->
-    <input id="all" type="checkbox" name="all" ><br>  <!--onclick="check(this)" -->
+    <input id="all" type="checkbox" name="all" onclick=""><br>  <!--onclick="check(this)" -->
     <div>
         <input type="checkbox" name="java" class="lang">java<br>
         <input type="checkbox" name="sql" class="lang">sql<br>
