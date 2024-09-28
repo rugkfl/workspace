@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function() {
+		var childWin;
+
+	   $("#one").on("click", function() {
+		childWin = window.open("childWin.html");
+	   });
+
+	   $("#two").on("click", function() {
+		// window.close("childWin.html"); => window.open()을 통해 열린 웹 페이지나 링크를 통해 열린 페이지만 close함수가 동작 
+		// 저렇게 직접적인 url 주소가 아닌 window.open을 했던 부분을 변수를 담아서 close에 window 대신 해당 변수를 통해 닫기
+		childWin.close();
+	   });
+
+	   $("#three").on("click", function() {
+		window.close();
+	   });
+	   
+	});
+</script>
+</head>
+<body>
+ <button id="one">새창 열기</button>
+ <button id="two">새창 닫기</button>
+ <button id="three">현재창(부모장) 닫기</button>
+</body>
+</html>

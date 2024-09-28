@@ -23,7 +23,7 @@
                 } else {
                     let isAll = true;
 
-                    for(let j = 0; j < inputList.length; i++) {
+                    for(let j = 0; j < inputList.length; i++) { 
                         if(!inputList[j].checked) {
                             isAll = false;
                             break;
@@ -33,6 +33,7 @@
                 }
             });    
         }
+
         all.addEventListener("click", () => {
             let checkResult = all.checked;
             // console.log(checkResult); true / false

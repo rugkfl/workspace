@@ -8,36 +8,48 @@
 <script type="text/javascript">
 
    $(document).ready(function() {
+      $("#one").on("click", function() {
+         let v1 = $("#v1").val();
+         let v2 = $("#v2").val();
+         let sum = Number(v1)+ Number(v2);
 
-		$("#one").on("click", function() {
-         let v1 = Number($("#v1").val());
-         let v2 = Number($("#v2").val());
-         let sum = v1 + v2;
          $("#result").val(sum);
       });
 
-      $("#quantity").on("change", function() {
-         let price = Number($("#price").val());
-         let count = Number($("#quantity").prop("selected", true).val()); // 선택된 값 가져와
-         // console.log(count); 
-         let mul = price * count;
-         // console.log(mul);
+      $("#quantity").change(function() { // select - option에서 선택된 값을 가져올려면 .change 사용
+         let price = $("#price").val();
+         let selected = $("#quantity :selected").val();
+         // console.log(selected);
+         let mul = Number(price) * Number(selected);
          $("#total").html(mul);
       });
 
       $("#two").on("click", function() {
+         // let arr = [];
+         // $("input:checkbox[name = fruit]").each(function(index) {
+         //    if($(this).is(":checked")) {
+         //       let chk = $(this).val();
+         //       arr.push(chk);
+         //    }  
+         // });
+         // // console.log(arr);
+         // let sum = 0;
+         // for(let i = 0; i < arr.length; i++) {
+         //    sum += Number(arr[i]);
+         // }
+         // // console.log(sum);
+         // $("#totalPrice").html(sum);
+
          let sum = 0;
          $("input:checkbox").each(function() {
             if($(this).is(":checked")) {
                sum += Number($(this).val());
             }
-         });
-         // console.log(sum);
+         })
          $("#totalPrice").html(sum);
       });
 
-
-		
+	
  });
 </script>
 </head>
