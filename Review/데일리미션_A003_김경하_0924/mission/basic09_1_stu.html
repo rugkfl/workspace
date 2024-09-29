@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+
+    /*
+       코드 구현   
+    */
+
+    let inputNumOne = prompt("1. 면접 점수값을 입력하시오.");
+    let inputNumTwo = prompt("2. 영어 점수값을 입력하시오.");
+
+    let interviewScore = Number(inputNumOne);
+    let englishScore = Number(inputNumTwo);
+    console.log(`면접점수: ${interviewScore}`);
+    console.log(`영어점수: ${englishScore}`);
+
+    let avg = (interviewScore + englishScore) / 2;
+    console.log(`평균: ${avg}`);
+    
+    if(avg >= 80) {
+        console.log("합격여부: 합격");
+    } else {
+        console.log("합격여부: 불합격");
+    }
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+   /*
+      성별 반환
+   */
+  function xyz(birthNum) {
+   let sub = birthNum.substr(7, 1); // 1
+   if(sub == 1) {
+      return "남";
+   } else if(sub == 2) {
+      return "여";
+   }
+
+  }
+   var gender = xyz('811025-1234567');
+   console.log("성별", gender );
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

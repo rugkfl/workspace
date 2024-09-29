@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 3000px;;
+            height: 2000px;
+        }
+
+        div {
+            position: fixed;
+            left: 10px;
+            top: 10px;
+        }
+    </style>
+    <script>
+        function sTo() {
+            window.scrollTo(100 , 200);
+        }
+
+        function sBy() {
+            window.scrollBy(100, 200);
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <button onclick="sTo()">scrollTo</button>
+        <button onclick="sBy()">scrollby</button>
+    </div>
+</body>
+</html>

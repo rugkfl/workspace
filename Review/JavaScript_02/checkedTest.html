@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function checkedTest() {
+            // radio 버튼 확인
+            let radioList = document.querySelectorAll("[type='radio']"); // 속성 값 찾기 
+            let value;
+
+            for(let i = 0; i < radioList.length; i++) {
+                if(radioList[i].checked) {
+                    value = radioList[i].value;
+                }
+            }
+            console.log("Radio 선택된 값 : ", value );
+
+            // ------------------------------
+            // checkbox 버튼 확인
+            let checkboxList = document.querySelectorAll("[type='checkbox']"); // 속성 값 찾기 
+            let valueList = "";
+
+            for(let i = 0; i < checkboxList.length; i++) {
+                if(checkboxList[i].checked) {
+                    valueList += checkboxList[i].value + ", ";
+                }
+            }
+            console.log("Checkbox 선택된 값 : ", valueList );
+
+            //-------------------------
+            let optionList = document.querySelectorAll("option");
+            let selectVal;
+
+            for(let i = 0; i < optionList.length; i++) {
+                if(optionList[i].selected) {
+                    selectVal = optionList[i].value;
+                }
+            }
+            console.log(selectVal);
+        }
+    </script>
+</head>
+<body>
+    first : <input type="radio" name="one" value="first">
+    second : <input type="radio" name="one" value="second">
+    <hr>
+    야구 : <input type="checkbox" name="sports" value="baseball">
+    축구 : <input type="checkbox" name="sports" value="soccer">
+    <hr>
+    계절 <select name="" id="">
+            <option value="봄">봄</option>
+            <option value="여름">여름</option>
+            <option value="가을">가을</option>
+            <option value="겨울">겨울</option>
+        </select>
+    <hr>
+    <button onclick="checkedTest()">확인</button>
+</body>
+</html>

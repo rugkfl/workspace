@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red-color {
+            color : red;
+        }
+
+        .font-20 {
+            font-size: 20px;
+        }
+    </style>
+
+</head>
+<body>
+    <p class="sample">text</p>
+    <p id="tgg">toggle test</p>
+    <script>
+        let pEle = document.querySelector("p");
+        pEle.classList.add("red-color", "font-20");
+        pEle.classList.add("red-color", "exam"); // 중복되는 값이 있으면 중첩돼서 표현되고 새로운 것만 추가됨
+
+        pEle.classList.remove("red-color", "exam", "sample");
+
+        let tEle = document.querySelector("#tgg");
+
+        setInterval(function() {
+            tEle.classList.toggle("red-color");
+        }, 1000); // 반복
+    </script>
+</body>
+</html>

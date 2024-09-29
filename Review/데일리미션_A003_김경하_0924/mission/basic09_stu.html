@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+   /*
+      코드 작성
+   */
+   let inputNum = prompt("1.정수값을 입력하시오.");
+    let score = Number(inputNum);
+    console.log(`입력값 : ${score}`);
+
+    if(score >= 1 && score <= 100) {
+        if(score >= 90) {
+            console.log("등급 : 1등급");
+        } else if (score >= 80) {
+            console.log("등급 : 2등급");
+        } else if (score >= 70) {
+            console.log("등급 : 3등급");
+        } else {
+            console.log("등급 : 4등급");
+        }
+    } else {
+        console.log("잘못된 입력값입니다.")
+    }
+    
+</script>
+</head>
+<body>
+
+</body>
+</html>

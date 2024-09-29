@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+   /*
+       대문자, 소문자, 거꾸로 된 데이터를
+       한번에 반환
+   */
+  /* .toUpperCase(), .toLowerCase(), */
+    function xyz(str) {
+        let upper = str.toUpperCase();
+        let lower = str.toLowerCase();
+        let reverse = str.split("").reverse().join(""); // 문자열 뒤집기
+        let arr = [upper, lower, reverse];
+        let result = arr.join(" "); // 콤마 제거
+        return result;
+    }
+   var data = xyz('AbCDeF');
+   console.log("데이터", data );
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

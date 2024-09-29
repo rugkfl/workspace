@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function txtFieldHandler() {
+            alert("클릭 이벤트 발생");
+
+        }
+
+        function keyHandler(inputEle, event) {
+            console.log(event.key, inputEle.value);
+
+            if(event.key === "Enter") {
+                txtFieldHandler();
+                console.log("submit을 실행하면 됩니다.")
+            }
+        }
+
+        function focusHandler(event) {
+            alert("커서가 input 태그에 있습니다.");
+            
+        }
+
+        function overHandler(event) {
+            document.querySelector("p").innerHTML = event.x + " : " + event.y;
+            document.querySelector("div").setAttribute("style", "background-color:red");
+        }
+
+        function leaveHandler(event) {
+            document.querySelector("div").removeAttribute("style");
+        }
+
+        function moveHandler(event)  {
+            let data = event.x + " : " + event.y;
+            document.querySelector("p").innerHTML = data;
+        }
+    </script>
+
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" onclick="txtFieldHandler()" onkeyup="keyHandler(this, event)" >  
+    <!-- onfocus="focusHandler(event)"> -->
+
+    <div    onmouseover="overHandler(event)"
+            onmouseleave="leaveHandler(event)"
+            onmousemove="moveHandler(event)">
+    </div>
+    <p></p>
+</body>
+</html>

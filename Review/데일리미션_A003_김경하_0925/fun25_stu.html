@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+let cnt = 0; // 카운트 수
+function print() {
+  cnt++; 
+  let result = document.querySelector("#result");
+  let arr = [];
+  let num = 3;
+  let sum = 0;
+  
+  for(let i = 1; i <= cnt; i++) { // 클릭 한 수만큼 반복
+    arr.push(num * i);
+    // sum += Number(arr[i - 1]);
+  }
+
+  for(let i = 0; i < arr.length; i++) {
+    sum += Number(arr[i]);
+  }
+  console.log(arr);
+  
+  result.innerHTML = arr + "<br>";
+  result.innerHTML += `클릭 수 : ${cnt} <br>`;
+  result.innerHTML += `합계 : ${sum}`;
+  
+
+
+}
+
+
+</script>
+</head>
+<body>
+<h3>배수 출력</h3>
+<button onclick="print()">3의 배수</button>
+<div id="result">
+</div>
+</body>
+</html>

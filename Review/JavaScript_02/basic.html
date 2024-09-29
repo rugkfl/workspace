@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="header">header</h1>
+    <a href="#">link</a>
+    <p id="data" class="header">Node <span style="display: none;">test</span></p>
+    <script>
+        let pEle = document.querySelector("#data");
+        console.log("-> textContent : ", pEle.textContent);
+        console.log("-> innerText : ", pEle.innerText);
+        console.log("-> innerHTML : ", pEle.innerHTML); // HTML 태그를 포함해서 텍스트와 함께 보여짐
+
+        let h1 = document.querySelector(".header"); // 여러 개 중에 상위에 있는 태그 하나만 
+        console.log(h1);
+
+        // let headerList = document.querySelectorAll(".header"); // header가 class인 태그를 다 찾음 / 배열
+        let headerList = document.querySelectorAll(".header#data"); // header가 class이고 id가 data인 태그를 다 찾음 / 배열
+        console.log(headerList);
+
+        let aEle = document.querySelector("a");
+        console.log(aEle);
+
+        // let tag = document.getElementsByTagName("body");
+        // console.log("body children : ",tag[0].children.length);
+
+        // let clsEle = document.getElementsByClassName("header");
+        // console.log(clsEle);
+
+        // let ele = document.getElementById("data");
+        // let childList = ele.children;
+        // console.log(childList.length);
+        // console.log(ele + " : " + childList);
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // alert("메시지 창");
+        let result = confirm("새창을 open 하시겠습니까?");
+        console.log(result);
+
+        if(result) {
+            // document.write("삭제진행");
+            open("windowClose.html", "새창", "width=500, height=300, top=250,left=600");
+        } else {
+            document.write("다시 돌아가");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

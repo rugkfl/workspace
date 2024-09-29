@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+     /* 코드 구현 */
+     function sum() {
+          let v1 = document.querySelector("#v1").value;
+          let arr = v1.split("/");
+          console.log(arr);
+          let sum = 0;
+          for(let i = 0; i < arr.length; i++) {
+               sum += Number(arr[i]);
+          } 
+
+          console.log(sum);
+     }
+  
+</script>
+</head>
+<body>
+<h3>문자열 처리</h3>
+값:<input type="text" name="v1" id="v1" value="10/20/30">
+<button onclick="sum()">합계</button><br>
+합계:<span id="result"></span>
+</body>
+</html>

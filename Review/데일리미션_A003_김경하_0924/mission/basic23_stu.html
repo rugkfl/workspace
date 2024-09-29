@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+     /*
+       코드 구현
+     
+     */
+    
+    let dice01 = 6;
+    let dice02 = 6;
+    let dice03 = 6;
+
+    for(let i = 1; i <= dice01; i++) {
+      for(let j = 1; j <= dice02; j++ ) {
+        for(let k = 1; k <= dice03; k++) {
+          if(i * j * k % 3 == 0) {
+            console.log(`${i} * ${j} * ${k} = ${i * j * k}`);
+          }
+        }
+      }
+    }
+</script>
+</head>
+<body>
+
+</body>
+</html>

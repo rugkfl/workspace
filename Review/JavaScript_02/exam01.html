@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            color : red;
+        }
+
+        .color {
+            color : magenta;
+        }
+
+        .fontStyle {
+            font-style: italic;
+        }
+    </style>
+
+    <script>
+        function changeColor() {
+            let ele = document.querySelector("h1");
+            // ele.setAttribute("style", "color:green; background-color:gray;");
+            ele.setAttribute("class", "color fontStyle");
+        }
+
+        function changeText() {
+            let ele = document.querySelector("div");
+            // ele.innerText = "추가 <span style='color:orange'>데이터</span>"; // innerText : 태그와 태그 사이에 있는 텍스트
+            // innerText를 쓰고 텍스트 사이에 위와 같은 설정을 하면 그냥 텍스트로 인식함
+            ele.innerHTML = "추가 <span style='color:orange'>데이터</span>"; // innerHTML를 써서 변경하는게 더 바람직 | 텍스트 사이에 있는 설정이 먹힘
+
+        }
+    </script>
+</head>
+<body>
+    <h1>Node Test</h1>
+    <div></div>
+        <button onclick="changeColor()">색상변경</button>
+        <button onclick="changeText()">내용변경</button>
+</body>
+</html>

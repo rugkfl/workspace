@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <a href="http://www.daum.net">Daum</a>
+
+    <script>
+        let ele = document.querySelector("a");
+        // ele.style.color = "red";
+
+        ele.setAttribute("style", "color:green"); // set 없으면 넣고 있으면 수정 | add는 추가
+        ele.setAttribute("href", "https://www.naver.com");
+
+        let value = ele.getAttribute("href");
+        console.log(value);
+
+        ele.removeAttribute("href");
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <script type="text/javascript">
+      function data() {
+        let input = document.getElementById("v1").value;
+        let array = input.split(",").map(Number);
+        console.log(array);
+
+        let sum = 0;
+        for (i = 0; i < array.length; i++) {
+          sum += array[i];
+        }
+        console.log(sum);
+
+        let avg = (sum / array.length).toFixed(2);
+
+        array.sort((a, b) => a - b);
+        console.log("sort :" + array);
+
+        let mid = Math.floor(array.length / 2);
+        let median;
+
+        if (array.length % 2 == 0) {
+          median = ((array[mid - 1] + array[mid]) / 2).toFixed(1);
+          console.log(median);
+        } else {
+          median = array[mid].toFixed(1);
+          console.log(median);
+        }
+
+        document.getElementById("result").innerHTML = `합계:${sum} <br/>
+                                                        평균:${avg}<br/>
+                                                        중위수:${median}`;
+      }
+    </script>
+  </head>
+  <body>
+    <h3>배열 관리</h3>
+    값:<input type="text" name="v1" id="v1" value="1,5,10,9,3,7,23,4,6,8" />
+    <button onclick="data()">데이터 분석</button><br />
+    <div id="result"></div>
+  </body>
+</html>
