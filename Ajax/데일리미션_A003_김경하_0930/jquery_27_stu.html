@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <script>
+             let totalPage; // 총페이지
+             let totalData;
+            $(document).ready(function() {
+                $.ajax({
+                    type : "GET",
+                    url : "boardList.json",
+                    dataType : "json",
+                    success: function(data) {
+                        console.log(data);
+                        totalData = data;
+                        let msg = "";
+                        $.each(data, function(index) {
+                            items = data[index];
+
+                            let num = items.num;
+                            let title = items.title;
+                            let createDt = items.createDt;
+                            let hit = items.hit;
+
+                
+                           if(data.length % 5 == 0) {
+                                totalPage = data.length / 5;
+                           } else {
+                            totalPage = Math.floor((data.length / 5) + 1);
+                           }
+                           console.log(totalPage);
+                           let showPage = 5; // 페이지 당 보여지는 개수
+                        
+                           save(1);
+                        })
+
+
+                        for(let i = 1; i <= totalPage; i++){
+                             let span = $('span').html();
+                             let a = `<a href='#' onclick='save(${i})'> [${i}] </a>`
+                             $('span').html(span+a);
+                           }
+                    }
+                })
+            });
+
+            function save(num){
+                // num = 2
+                console.log(totalData)
+                
+                let a =num;
+                let start = (a - 1 ) * 5 ;// 0 5 10 
+                let end = (a) *5 //5 10 15
+                if(end >= totalData.length){
+                    end = totalData.length
+                }
+                 $("table").empty();
+                let msg = `
+                        <tr>
+                            <th>Num</th>
+                            <th>Title</th>
+                            <th>Create Date</th>
+                            <th>Hit</th>
+                        </tr>
+                         `;
+                for(let i = start; i < end; i++){
+                    console.log(totalData[i])
+                    msg += "<tr>";
+                    msg += "<td>" + totalData[i].num + "</td>";
+                    msg += `<td>  ${totalData[i].title} </td>`;
+                    msg += "<td>" + totalData[i].createDt + "</td>";
+                    msg += "<td>" + totalData[i].hit + "</td>";
+                    msg += "</tr>";
+                }
+                $("table").append(msg);
+
+            }
+        </script>
+    </head>
+    <body>
+        <table border="1">
+            <tr>
+                <th>Num</th>
+                <th>Title</th>
+                <th>Create Date</th>
+                <th>Hit</th> 
+            </tr>
+        </table>
+        <div id = pag>페이지 번호 : <span></span></div>
+    </body>
+</html>

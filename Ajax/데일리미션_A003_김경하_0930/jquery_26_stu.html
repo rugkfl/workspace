@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+         let orders;
+        $(document).ready(function () {
+            $.ajax({
+                type: "GET",
+                url: "orderList.json",
+                dataType: "json",
+                success: function (data) {
+                    let msg = "";
+                    orders = data;
+                    //console.log(data)
+                    $.each(data, function (index) {
+                    //  console.log(data[index]);
+
+                        let orderNum = data[index].orderNum;
+                        let memName = data[index].memName;
+                        let orderDt = data[index].orderDt;
+                        let orderItems = data[index].orderItems;
+
+                        let quantity = 0;
+                        let itemPrice = 0;
+                        for (let i = 0; i < orderItems.length; i++) {
+                            item01 = orderItems[i];
+                            quantity += Number(item01.quantity);
+                            itemPrice += Number(item01.itemPrice * item01.quantity);
+
+                            // console.log(quantity);
+                            // console.log(itemPrice);
+
+
+                        }
+                        msg = "<tr>";
+                        msg += "<td>" + orderNum + "</td>";
+                        msg += `<td><a href='#' onclick='save(${orderNum})'> ${memName}</a></td>`;
+                        msg += "<td>" + orderDt + "</td>";
+                        msg += "<td>" + quantity + "</td>";
+                        msg += "<td>" + itemPrice + "</td>";
+                        msg += "</tr>";
+
+                        $("#first").append(msg);
+
+                    });
+                }
+
+            });
+
+            $("button").on("click", function () {
+                //$("#second tr").empty();
+                //$("#second tbody").empty();
+                let search = $("input:text").val();
+               
+                
+                // console.log(search);  
+                
+                // 테이블 초기화
+                let orderList = orders[search-1].orderItems;
+                console.log(orderList)
+                
+                let msg = `
+                            <tr>
+                        <th>Order Num</th>
+                        <th>Member Name</th>
+                        <th>Order date</th>
+                        <th>Product Count</th>
+                        <th>Total Price</th>
+                    </tr>
+                `;
+                for(let i= 0; i < orderList.length; i++ ){
+                        let item02 = orders[search-1].orderNum;
+                        let itemNum = orderList[i].itemNum;
+                        let itemName = orderList[i].itemName;
+                        let itemPrice = orderList[i].itemPrice;
+                        let quantity = orderList[i].quantity;
+
+                        msg += "<tr>";
+                        msg += "<td>" + item02 + "</td>";
+                        msg += "<td>" + itemNum + "</td>";
+                        msg += "<td>" + itemName + "</td>";
+                        msg += "<td>" + itemPrice + "</td>";
+                        msg += "<td>" + quantity + "</td>";
+                        msg += "</tr>";
+                        
+                        $('#second').html(msg)
+                        //$("#second tbody").append(msg);
+                }
+
+                // if (search == orderNum) {
+                //     for (let i = 0; i < orderItems.length; i++) {
+                //         item02 = orderItems[i];
+
+                //         let itemNum = item02.itemNum;
+                //         let itemName = item02.itemName;
+                //         let itemPrice = item02.itemPrice;
+                //         let quantity = item02.quantity;
+
+                //         msg = "<tr>";
+                //         msg += "<td>" + orderNum + "</td>";
+                //         msg += "<td>" + itemNum + "</td>";
+                //         msg += "<td>" + itemName + "</td>";
+                //         msg += "<td>" + itemPrice + "</td>";
+                //         msg += "<td>" + quantity + "</td>";
+                //         msg += "</tr>";
+
+                //         $("#second tbody").append(msg);
+
+                //     }
+                // }
+            });
+
+        });
+
+        function save(num){
+            let orderList = orders[num-1].orderItems;
+                console.log(orderList)
+                
+                let msg = `
+                            <tr>
+                        <th>Order Num</th>
+                        <th>Member Name</th>
+                        <th>Order date</th>
+                        <th>Product Count</th>
+                        <th>Total Price</th>
+                    </tr>
+                `;
+                for(let i= 0; i < orderList.length; i++ ){
+                        let item02 = orders[num-1].orderNum;
+                        let itemNum = orderList[i].itemNum;
+                        let itemName = orderList[i].itemName;
+                        let itemPrice = orderList[i].itemPrice;
+                        let quantity = orderList[i].quantity;
+
+                        msg += "<tr>";
+                        msg += "<td>" + item02 + "</td>";
+                        msg += "<td>" + itemNum + "</td>";
+                        msg += "<td>" + itemName + "</td>";
+                        msg += "<td>" + itemPrice + "</td>";
+                        msg += "<td>" + quantity + "</td>";
+                        msg += "</tr>";
+                        
+                        $('#second').html(msg)
+                        //$("#second tbody").append(msg);
+                }
+        }
+    </script>
+</head>
+
+<body>
+    <h3>상품 주문 목록</h3>
+    <hr />
+    <p>
+        검색 : <input type="text" /><button>검색</button>
+    </p>
+    <table id="first" border="1">
+        <tr>
+            <th>Order Num</th>
+            <th>Member Name</th>
+            <th>Order date</th>
+            <th>Product Count</th>
+            <th>Total Price</th>
+        </tr>
+    </table>
+    <hr />
+    <div>
+        <table id="second" border="1" >
+            <tr>
+                <th>Order Num</th>
+                <th>item Num</th>
+                <th>item Name</th>
+                <th>price</th>
+                <th>order qty</th>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

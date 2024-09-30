@@ -11,7 +11,7 @@
    var arr = [];  
    
    $(document).ready(function() {
-      $("#v1").keydown(function(key) {
+      $("#v1").keyup(function(key) {
         let v1 = $("#v1").val() + "<br>";
 
         if(key.keyCode == 13) {
@@ -25,6 +25,27 @@
 
       })
         
+    });
+
+    $(document),ready(function() {
+      let list = [];
+
+      $("input").on("keyup", function(e) {
+        console.log(e.keyCode);
+
+        if(e.keyCode === 13) {
+          let data = $(this).val();
+          list.push(data);
+
+          let msg = "";
+          $.each(list, function(index, item) {
+            msg += item + "<br>"
+          });
+
+          $("div").html(msg);
+          $(this).val("");
+        }
+      });
     });
 </script>
 </head>

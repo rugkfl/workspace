@@ -16,7 +16,7 @@
          $("#result").val(sum);
       });
 
-      $("#quantity").change(function() {
+      $("#quantity").change(function() { // on change
          let price = Number($("#price").val());
          let count = Number($("#quantity").prop("selected", true).val()); // 선택된 값 가져와
          // console.log(count); 
@@ -36,6 +36,7 @@
          $("#totalPrice").html(sum);
       });
 
+    
 
 		
  });

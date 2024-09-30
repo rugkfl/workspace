@@ -22,6 +22,43 @@
       });
 
    });
+
+   
+   // var arr = [];  
+   // $(document).ready(function() {
+	// 	$("#btn").on("click", function() {
+   //       let v1 = $("#v1").val() + "<br>"; // $("input:search").val() => 이건 왜 오류....?
+   //       arr.push(v1);
+      
+   //       for(let i = 0; i < arr.length; i++) {
+   //          $("#result").html(arr);
+   //       }
+   //       $("#v1").val(""); // 초기화
+   //       // v1 = ""; => 이 방식은 초기화 안됨
+   //       // v1.val(""); => 안됨
+   //    });
+
+   // });
+
+   $(document).ready(function() {
+      $("button").on("click", function() {
+         let data = $("input").val();
+
+         let msg = "";
+
+         $.each(list ,function(index, item) {
+            msg += `${item}<br>`;
+         });
+
+         // for(let i = 0; i < list.length; i++) {
+         //    msg += list[i] + "<br>";
+
+            $("div").html(msg);
+            $("input").va;("");
+         // }
+      })
+   });
+   
    
 </script>
 </head>

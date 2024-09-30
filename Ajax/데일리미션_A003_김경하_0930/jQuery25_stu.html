@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+    // 순위 = rank, 제목 = movieNm, 개봉일 = openDt, 상영횟수 =showCnt
+    $(document).ready(function(){
+      $("#req").on("click", function() {
+        let targetDt  = $("#targetDt").val();
+
+        $.ajax({
+          url : `http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=3d430a039fb1bae3fe5f0bc48df64e46&targetDt=${targetDt}`,
+          method : 'GET',
+          dataType : 'json',
+          success : function(data) {
+            let movieList = data.boxOfficeResult.dailyBoxOfficeList;
+
+            // 테이블 초기화
+            $("table").empty();
+
+            let msg = "";
+            for(let i = 0; i < movieList.length; i++) {
+              let item = movieList[i];
+
+              let rank = item.rank;
+              let movieNm = item.movieNm;
+              let openDt = item.openDt.split("-").join("");
+              let showCnt = item.showCnt;
+
+              console.log(rank);
+              console.log(movieNm);
+              console.log(openDt);
+              console.log(showCnt);
+
+              msg = "<tr>";
+              msg += "<td>" + rank + "</td>";
+              msg += "<td>" + movieNm + "</td>";
+              msg += "<td>" + openDt + "</td>";
+              msg += "<td>" + showCnt + "</td>";
+              msg += "</tr>";
+
+              $("table").append(msg);
+            }
+           
+          }
+        });
+       
+      });
+
+    });
+    
+
+</script>
+</head>
+<body>
+<h1>박스오피스 순위</h1>
+<input type="text" name="targetDt" id="targetDt" placeholder="입력포맷:20230101">
+<button id="req" >요청</button>
+<div id="result"></div>
+<table border="1">
+  <tr>
+    <th>순위</th>
+    <th>제목</th>
+    <th>개봉일</th>
+    <th>상영횟수</th>
+  </tr>
+
+</table>
+</body>
+</html>
+
+
+
+
+
+
+
+
