@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let id;
+        let pwd;
+        let name;
+        let email;
+        let date;
+        let tableArr = [];
+        // 추가
+        function add() {
+            id = document.querySelector("#id").value;
+            pwd = document.querySelector("#pwd").value;
+            name = document.querySelector("#name").value;
+            email = document.querySelector("#email").value;
+            date = new Date();
+            year = date.getFullYear();
+
+            // 10
+            // 010
+            month = ('0' + (date.getMonth()+1)).slice(-2); // 
+            day = ('0' + date.getDay()).slice(-2);
+
+            let createDt = year + '-' + month + '-' + day;
+
+    
+            let arr = [id, pwd, name, email, createDt]; //초기화
+            
+            console.log(arr);
+
+            let msg = "";
+            
+            let tr = document.querySelector("#tbody01").insertRow(); // tr 생성
+            for(let i=0; i<arr.length; i++){ 
+                let td = tr.insertCell(); // td 생성
+                td.innerHTML = arr[i]; // 값 추가
+
+                tableArr.push(arr[i]);
+                console.log(tableArr);
+            
+                // input 초기화
+                document.querySelector("#id").value = "";
+                document.querySelector("#pwd").value = "";
+                document.querySelector("#name").value = "";
+                document.querySelector("#email").value = "";
+            }
+            
+        }
+
+        
+        // 전체조회
+        let search;
+        function totSearch() {
+            search = document.querySelector("#search").value;
+
+            console.log("totalArr : ")
+            console.log(tableArr.length)
+
+            
+            document.querySelector("#tbody01").innerHTML = ""
+            
+            
+            for(let i = 0; i < tableArr.length/5; i++){
+                let tr = document.querySelector("#tbody01").insertRow(); // tr 생성
+                let td01 = tr.insertCell(); // td 생성
+                td01.innerHTML += tableArr[(5*i)]
+                let td02 = tr.insertCell(); // td 생성
+                td02.innerHTML += tableArr[ (5*i) +1]
+                let td03 = tr.insertCell(); // td 생성
+                td03.innerHTML +=tableArr[(5*i) +2]
+                let td04 = tr.insertCell(); // td 생성
+                td04.innerHTML += tableArr[(5*i)+3]
+                let td05 = tr.insertCell(); // td 생성
+                td05.innerHTML += tableArr[(5*i)+4]
+            }
+
+            
+        }
+
+        // ID 조회
+        function idSearch() {
+            search = document.querySelector("#search").value;
+
+            document.querySelector("#tbody01").innerHTML = ""
+            
+            for(let i = 0; i < tableArr.length/5; i++){
+                if(tableArr[(5*i)] == search) {
+                    let tr = document.querySelector("#tbody01").insertRow(); // tr 생성
+                    let td01 = tr.insertCell(); // td 생성
+                    td01.innerHTML += tableArr[(5*i)]
+                    let td02 = tr.insertCell(); // td 생성
+                    td02.innerHTML += tableArr[ (5*i) +1]
+                    let td03 = tr.insertCell(); // td 생성
+                    td03.innerHTML +=tableArr[(5*i) +2]
+                    let td04 = tr.insertCell(); // td 생성
+                    td04.innerHTML += tableArr[(5*i)+3]
+                    let td05 = tr.insertCell(); // td 생성
+                    td05.innerHTML += tableArr[(5*i)+4]
+                }
+                 
+
+
+            }
+            
+        }
+
+        function remove() {
+            id = document.querySelector("#id").value;
+            console.log(id)
+
+            document.querySelector("#tbody01").innerHTML = ""
+            
+            let removeArr = [];
+            for(let i = 0; i < tableArr.length/5; i++){
+                if(tableArr[(5*i)] != id){
+                    removeArr.push(tableArr[(5*i)])
+                    removeArr.push(tableArr[(5*i) + 1])
+                    removeArr.push(tableArr[(5*i) + 2])
+                    removeArr.push(tableArr[(5*i) + 3])
+                    removeArr.push(tableArr[(5*i) + 4])
+                }
+            }
+
+            tableArr  = removeArr
+            console.log(tableArr)
+
+            for(let i = 0; i < tableArr.length/5; i++){
+                    let tr = document.querySelector("#tbody01").insertRow(); // tr 생성
+                    let td01 = tr.insertCell(); // td 생성
+                    td01.innerHTML += tableArr[(5*i)]
+                    let td02 = tr.insertCell(); // td 생성
+                    td02.innerHTML += tableArr[ (5*i) +1]
+                    let td03 = tr.insertCell(); // td 생성
+                    td03.innerHTML += tableArr[(5*i) +2]
+                    let td04 = tr.insertCell(); // td 생성
+                    td04.innerHTML += tableArr[(5*i)+3]
+                    let td05 = tr.insertCell(); // td 생성
+                    td05.innerHTML += tableArr[(5*i)+4]
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>사용자 관리</h1>
+
+    <p></p>
+    <button  onclick="totSearch()">전체조회</button> 
+    <input type="text" id="search"> 
+    <button onclick="idSearch()">ID검색</button>
+    <table id="table01" border="1">
+        <tr>
+            <th>사원ID</th>
+            <th>비번</th>
+            <th>이름</th>
+            <th>이메일</th>
+            <th>생성일</th>
+        </tr>
+       <tbody id="tbody01">
+
+       </tbody>
+    </table>
+
+    <hr>
+
+    <table id="table02" border="1">
+        <tr>
+            <td>사원ID</td>
+            <td><input id="id" type="text"></td>
+        </tr>
+        <tr>
+            <td>비번</td>
+            <td><input id="pwd" type="password"></td>
+        </tr>
+        <tr>
+            <td>이름</td>
+            <td><input id="name" type="text"></td>
+        </tr>
+        <tr>
+            <td>이메일</td>
+            <td><input id="email" type="email"></td>
+        </tr>
+    </table>
+
+    <button onclick="add()">추가</button>
+    <button onclick="remove()">삭제</button>
+    <button>수정</button>
+</body>
+</html>
