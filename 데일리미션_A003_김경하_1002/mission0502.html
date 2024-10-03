@@ -17,13 +17,13 @@
             pwd = document.querySelector("#pwd").value;
             name = document.querySelector("#name").value;
             email = document.querySelector("#email").value;
-            date = new Date();
-            year = date.getFullYear();
+            date = new Date(); // 현재시간 
+            year = date.getFullYear(); // 년
 
             // 10
             // 010
-            month = ('0' + (date.getMonth()+1)).slice(-2); // 
-            day = ('0' + date.getDay()).slice(-2);
+            month = ('0' + (date.getMonth()+1)).slice(-2); // 월
+            day = ('0' + date.getDay()).slice(-2); // 일
 
             let createDt = year + '-' + month + '-' + day;
 
@@ -32,7 +32,7 @@
             
             console.log(arr);
 
-            let msg = "";
+            // let msg = "";
             
             let tr = document.querySelector("#tbody01").insertRow(); // tr 생성
             for(let i=0; i<arr.length; i++){ 
@@ -60,16 +60,17 @@
             console.log("totalArr : ")
             console.log(tableArr.length)
 
-            
+            // 테이블 값 초기화
             document.querySelector("#tbody01").innerHTML = ""
             
             
             for(let i = 0; i < tableArr.length/5; i++){
                 let tr = document.querySelector("#tbody01").insertRow(); // tr 생성
+
                 let td01 = tr.insertCell(); // td 생성
-                td01.innerHTML += tableArr[(5*i)]
+                td01.innerHTML += tableArr[(5*i)] // 0
                 let td02 = tr.insertCell(); // td 생성
-                td02.innerHTML += tableArr[ (5*i) +1]
+                td02.innerHTML += tableArr[(5*i) +1] //1
                 let td03 = tr.insertCell(); // td 생성
                 td03.innerHTML +=tableArr[(5*i) +2]
                 let td04 = tr.insertCell(); // td 생성
@@ -85,6 +86,7 @@
         function idSearch() {
             search = document.querySelector("#search").value;
 
+            // 
             document.querySelector("#tbody01").innerHTML = ""
             
             for(let i = 0; i < tableArr.length/5; i++){
@@ -101,8 +103,6 @@
                     let td05 = tr.insertCell(); // td 생성
                     td05.innerHTML += tableArr[(5*i)+4]
                 }
-                 
-
 
             }
             

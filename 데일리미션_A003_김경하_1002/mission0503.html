@@ -69,7 +69,7 @@
                 let td01 = tr.insertCell(); // td 생성
                 td01.innerHTML += tableArr[(5*i)]
                 let td02 = tr.insertCell(); // td 생성
-                td02.innerHTML += tableArr[ (5*i) +1]
+                td02.innerHTML += tableArr[(5*i) +1]
                 let td03 = tr.insertCell(); // td 생성
                 td03.innerHTML +=tableArr[(5*i) +2]
                 let td04 = tr.insertCell(); // td 생성
@@ -108,6 +108,7 @@
             
         }
 
+        // 삭제
         function remove() {
             id = document.querySelector("#id").value;
             console.log(id)
@@ -130,6 +131,7 @@
 
             for(let i = 0; i < tableArr.length/5; i++){
                     let tr = document.querySelector("#tbody01").insertRow(); // tr 생성
+
                     let td01 = tr.insertCell(); // td 생성
                     td01.innerHTML += tableArr[(5*i)]
                     let td02 = tr.insertCell(); // td 생성
