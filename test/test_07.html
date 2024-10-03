@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <script type="text/javascript">
+     window.onload= () => {
+        // split() => 문자열 (쪼개서 배열로 )
+        // join() => 배열 (붙여서 문자열)
+        btn.addEventListener("click", function() {
+            let btn = document.querySelector("#btn");
+            let val = document.querySelector("#v1").value;
+            let result = document.querySelector("#result");
+            let val2 =  val.split(" ");
+            console.log(val2);
+
+            
+            let words = val2.join("");
+            result.innerHTML = `단어수 : ${val2.length} <br> 글자수 : ${words.length}`;
+
+
+        })
+     }
+    </script>
+  </head>
+  <body>
+    <h3>문자열 관리</h3>
+    값:<input type="text" name="v1" id="v1" value="How are you? fine thank you"/>
+    <button id="btn">데이터 분석</button><br />
+    <div id="result"></div>
+  </body>
+</html>

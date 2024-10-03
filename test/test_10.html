@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+    window.onload = () => {
+        let allChk = document.querySelector("#all");
+
+        allChk.addEventListener("click", function() {
+            // console.log(allChk);
+
+            let chk = document.querySelectorAll(".lang");
+            for(let i = 0; i < chk.length; i++) {
+                if(allChk.checked) { // .checked => 체크여부
+                    chk[i].checked = true; 
+                } else if(!allChk.checked) {
+                    chk[i].checked = false;
+                }
+            }
+        });
+    }
+
+</script>
+</head>
+<body>
+    전체선택
+    <input id="all" type="checkbox" name="all"><br>
+    <!--<input id="all" type="checkbox" name="all" onclick="chk()"><br>-->
+    <input type="checkbox" name="java" class="lang">java<br>
+    <input type="checkbox" name="sql" class="lang">sql<br>
+    <input type="checkbox" name="angular" class="lang">angular<br>
+</body>
+</html>

@@ -4,53 +4,91 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-    // function check(all) {
-    //     let langs = document.querySelectorAll(".lang");
 
-    //     for(let i = 0; i < langs.length; i++) {
-    //         langs[i].checked = all.checked; // 전체 선택 상태를 각 체크박스에 적용
-    //     }
-    // }
-  
-    const init = () => {
-        let all = document.querySelector("#all");
-        let inputList = document.querySelectorAll("div > input");
+        // function chk(){
+        //     let chkAll = document.querySelector("#all");
+        //     let chkbox = document.querySelectorAll(".lang");
+        //     console.log(chkbox);
+        //     chkbox.forEach(function(box) {
+        //         console.log(box);
+        //     box.checked = chkAll.checked;
+        //     });
+        // }
 
-        for(let i = 0; i < inputList.length; i++) {
-            inputList[i].addEventListener("click", () => {
-                if(!inputList[i].checked) {
-                    all.checked = false;
-                } else {
-                    let isAll = true;
+        window.onload = function(){
+            let chkAll = document.querySelector("#all");
+            let chkbox = document.querySelectorAll(".lang");
 
-                    for(let j = 0; j < inputList.length; i++) { 
-                        if(!inputList[j].checked) {
-                            isAll = false;
-                            break;
-                        } 
-                    }
-                    all.checked = isAll;
+            chkAll.addEventListener("click",()=>{
+                for(let i=0;i<chkbox.length;i++){
+                    chkbox[i].checked = chkAll.checked;
                 }
-            });    
+            });
+
+            chkbox[0].addEventListener("click",()=>{
+                if( !chkbox[0].checked ){
+                    chkAll.checked = false;
+                }
+                else{
+                    let cnt = 0; // checked input 개수
+                    for(let i = 0; i < chkbox.length; i++){
+                        if( chkbox[i].checked){
+                            cnt += 1;
+                        }
+                    }
+
+                    if( cnt ==3){
+                        chkAll.checked = true;
+                    }
+                }
+            });
+
+            chkbox[1].addEventListener("click",()=>{
+                if( !chkbox[1].checked ){
+                    chkAll.checked = false;
+                }
+                else{
+                    let cnt = 0;
+                    for(let i = 0; i < chkbox.length; i++){
+                        if( chkbox[i].checked){
+                            cnt += 1;
+                        }
+                    }
+
+                    if( cnt ==3){
+                        chkAll.checked = true;
+                    }
+                }
+            });
+
+            chkbox[2].addEventListener("click",()=>{
+                if( !chkbox[2].checked ){
+                    chkAll.checked = false;
+                }
+                else{
+                    let cnt = 0;
+                    for(let i = 0; i < chkbox.length; i++){
+                        if( chkbox[i].checked){
+                            cnt += 1;
+                        }
+                    }
+
+                    if( cnt ==3){
+                        chkAll.checked = true;
+                    }
+                }
+            });
+
         }
 
-        all.addEventListener("click", () => {
-            let checkResult = all.checked;
-            // console.log(checkResult); true / false
-                for(let i = 0; i < inputList.length; i++) {
-                    inputList[i].checked = checkResult;
-                }
-        });
-    }
 </script>
 </head>
-<body onload="init()">
-    전체선택 <!-- this: 전체 선택 체크박스를 참조-->
-    <input id="all" type="checkbox" name="all" ><br>  <!--onclick="check(this)" -->
-    <div>
-        <input type="checkbox" name="java" class="lang">java<br>
-        <input type="checkbox" name="sql" class="lang">sql<br>
-        <input type="checkbox" name="angular" class="lang">angular<br>
-    </div>
+<body>
+    전체선택
+    <input id="all" type="checkbox" name="all"><br>
+    <!--<input id="all" type="checkbox" name="all" onclick="chk()"><br>-->
+    <input type="checkbox" name="java" class="lang">java<br>
+    <input type="checkbox" name="sql" class="lang">sql<br>
+    <input type="checkbox" name="angular" class="lang">angular<br>
 </body>
 </html>

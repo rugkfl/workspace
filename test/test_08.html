@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+    window.onload = () => {
+        let made = document.querySelector("#made");
+        let del = document.querySelector("#del");
+        let save = document.querySelector("#save");
+        let print = document.querySelector("#print");
+
+        made.addEventListener("click", function() {
+            let input = document.querySelector("#v1").value;
+            let inputArr = [];
+            console.log(inputArr);
+        });
+
+        let inputArr = [];
+        save.addEventListener("click", function() {
+            let input = document.querySelector("#v1").value;
+            
+            inputArr.push(input);
+            console.log(inputArr);
+            document.querySelector("#v1").value = "";
+        });
+
+        del.addEventListener("click", function() {
+            let result = document.querySelector("#result");
+            inputArr = [];
+            console.log(inputArr);
+            result.innerHTML = inputArr;
+        });
+
+        print.addEventListener("click", function() {
+            let result = document.querySelector("#result");
+
+            for(let i = 0; i < inputArr.length; i++) {
+                result.innerHTML += inputArr[i] + "<br>";
+            }
+           
+        });
+    }
+  
+</script>
+</head>
+<body>
+<h3>배열 관리</h3>
+<button id="made">배열생성</button>
+<button id="del">배열삭제</button><br>
+값:<input type="text" name="v1" id="v1" >
+<button id="save">배열에 값 저장</button><br>
+<button id="print">배열에 값 출력</button><br>
+<div id="result"></div>
+</body>
+</html>

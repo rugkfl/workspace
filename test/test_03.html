@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        window.onload = () => {
+            let btn = document.querySelector("#btn");
+            let result = document.querySelector("#result");
+
+            let arr = []; // 3의 배수를 담는 배열
+            let i = 0; // 곱하는 수 + 클릭 카운트
+            let sum = 0; // 합계
+            btn.addEventListener("click", function() {
+                i++; // => 1로 시작해서 클릭할때마다 +1
+                let num = 3; // 3의 배수
+                let threeMul = num * i; 
+                arr.push(threeMul); // 3의 배수를 배열에 넣어줌
+                sum += threeMul; // 합계
+                result.innerHTML = `${arr} <br> 클릭한 수 : ${i} <br> 합계 : ${sum}`; 
+                
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>배수 출력</h1>
+    <p></p>
+    <button id="btn">3의 배수</button>
+    <div id="result"></div>
+</body>
+</html>
